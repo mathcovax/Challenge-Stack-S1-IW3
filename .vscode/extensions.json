@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"geyao.html-snippets",
+		"pkief.material-icon-theme"
+	]
+}
