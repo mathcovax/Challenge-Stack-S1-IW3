@@ -1,0 +1,23 @@
+x* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light-grey;
+  font-family: $font1;
+}
+
+h1 {
+  font-family: $font2;
+  font-size: rem(24);
+}
+
+h2 {
+  font-family: $font2;
+  font-size: rem(16);
+}
+
+.container {
+  max-width: $container-width;
+  margin: auto;
+}
