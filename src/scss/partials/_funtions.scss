@@ -1,0 +1,10 @@
+@function rem($pxvalue) {
+  @return (calc($pxvalue/16) * 1rem);
+}
+
+@mixin cover-bg() {
+  background-image: url("../../../fond.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
