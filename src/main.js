@@ -1,3 +1,3 @@
-import test from "./test.js";
+import Component from "./lib/component";
 
-
+import("./components/input");

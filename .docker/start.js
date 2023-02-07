@@ -14,25 +14,32 @@ class child{
 	static start(){
 		this.process = spawn("npm", ["run", "dev"], {stdio: "inherit", cwd: "/app", detached: true});
 		this.watcher = new Watcher("/app/node_modules").on("unlinkDir", () => child.restart());
+		this.watcher1 = new Watcher("/app/webpack.config.js").on("change", () => child.restart());
 	}
 
 	static stop(){
 		this.watcher.close();
+		this.watcher1.close();
 		try{
+			execSync("lsof -t -i :80 | xargs kill -9", {stdio: "inherit"});
 			process.kill(this.process.pid, "SIGINT");
 		}catch{}
 	}
 
 	static restart(){
 		this.stop();
-		console.log("Starting reinstall all package");
-		execSync("npm install", {stdio: "ignore", cwd: "/app"});
-		execSync("chmod -R 777 ./node_modules", {stdio: "ignore", cwd: "/app"});
+		if(!fs.existsSync("/app/node_modules")){
+			console.log("Starting reinstall all package");
+			execSync("npm install", {stdio: "ignore", cwd: "/app"});
+			execSync("chmod -R 777 ./node_modules", {stdio: "ignore", cwd: "/app"});
+		}
 		this.start();
+		
 	}
 
 	static process;
 	static watcher;
+	static watcher1;
 }
 
 child.start();
