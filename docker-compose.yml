@@ -5,7 +5,7 @@ services:
     build:
       context: .docker
     ports:
-      - 1506:80
+      - 1506:1506
     volumes:
       - .:/app
 

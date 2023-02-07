@@ -21,7 +21,7 @@ class child{
 		this.watcher.close();
 		this.watcher1.close();
 		try{
-			execSync("lsof -t -i :80 | xargs kill -9", {stdio: "inherit"});
+			execSync("lsof -t -i :1506 | xargs kill -9", {stdio: "inherit"});
 			process.kill(this.process.pid, "SIGINT");
 		}catch{}
 	}

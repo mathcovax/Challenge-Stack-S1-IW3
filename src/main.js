@@ -1,3 +1,4 @@
-import Component from "./lib/component";
+import "./components/input";
+import { getComp } from "./lib/component";
 
-import("./components/input");
+window.getComp = getComp;

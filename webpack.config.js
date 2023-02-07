@@ -3,7 +3,6 @@
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV == "production";
-const WebpackDevServer = require("webpack-dev-server");
 
 const config = {
 	entry: "./src/main.js",
@@ -26,7 +25,7 @@ const config = {
 	devServer: {
 		open: true,
 		hot: true,
-		port: 80,
+		port: 1506,
 		host: "0.0.0.0",
 		static: {
 			directory: __dirname,
