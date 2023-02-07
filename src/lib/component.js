@@ -110,6 +110,9 @@ export default class Component{
 				{
 					get: () => {
 						return el.getAttribute(props);
+					},
+					set: (arg) => {
+						el.setAttribute(props, arg);
 					}
 				}
 			);

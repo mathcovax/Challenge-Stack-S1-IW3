@@ -13,6 +13,7 @@ if(!fs.existsSync("/app/node_modules")){
 class child{
 	static start(){
 		this.process = spawn("npm", ["run", "dev"], {stdio: "inherit", cwd: "/app", detached: true});
+		this.process1 = spawn("npx", ["sass", "--watch", "/app/src/scss/global.scss:/app/public/css/global.css"], {stdio: "inherit", cwd: "/app", detached: true});
 		this.watcher = new Watcher("/app/node_modules").on("unlinkDir", () => child.restart());
 		this.watcher1 = new Watcher("/app/webpack.config.js").on("change", () => child.restart());
 	}
@@ -38,6 +39,7 @@ class child{
 	}
 
 	static process;
+	static process1;
 	static watcher;
 	static watcher1;
 }
