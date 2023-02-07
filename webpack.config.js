@@ -28,7 +28,7 @@ const config = {
 		port: 1506,
 		host: "0.0.0.0",
 		static: {
-			directory: __dirname,
+			directory: path.resolve(__dirname, "public"),
 		}
 		
 	}
