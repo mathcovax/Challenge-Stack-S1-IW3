@@ -41,7 +41,15 @@ export default class Component{
 		
 	};
 
-	assign(el){
+	assign(tag){
+		let porter = document.createElement("div");
+		porter.innerHTML = this.#inner;
+		const el = porter.firstChild;
+		
+		for(let index = 0; index < tag.attributes.length; index++){
+			el.attributes.setNamedItem(tag.cloneNode().attributes.removeNamedItem(tag.attributes.item(index).name));
+		}
+
 		el._comp = {
 			get el(){
 				return el;
@@ -142,8 +150,6 @@ export default class Component{
 		}
 		
 		
-		let div = document.createElement("div");
-		div.innerHTML = this.#inner;
 		(function find(elo){
 			for(const child of elo.children){
 				for(const event of Component.events){
@@ -173,7 +179,7 @@ export default class Component{
 				find(child);
 			}
 
-		}).call(this, div);
+		}).call(this, el);
 
 		el._comp.refresh();
 
