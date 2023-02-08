@@ -1,7 +1,4 @@
 /* Colors */
-$color-light: #FFFFFF;
-$color-gray: #64748B;
-$color-dark: #000000;
 $color-primary-100: #F0F8FF;
 $color-primary-200: #C7E0F4;
 $color-primary-300: #9EC7E9;
@@ -9,6 +6,22 @@ $color-primary-400: #0EA5E9;
 $color-primary-500: #0C7AAB;
 $color-primary-600: #0A4E6D;
 $color-primary-700: #07232F;
+
+$color-secondary-100: #FFFFFF;
+$color-secondary-200: #e3e5e7;
+$color-secondary-300: #b6bbc4;
+$color-secondary-400: #64748B;
+$color-secondary-500: #2C3E50;
+$color-secondary-600: #1A242F;
+$color-secondary-700: #000000;
+
+:root{
+	--c-p: #{$color-primary-400};
+	--c-s: #{$color-secondary-400};
+
+	--c-l: #{$color-secondary-100};
+	--c-d: #{$color-secondary-700};
+}
 
 /* Sizes */
 $container-width: 1500px;

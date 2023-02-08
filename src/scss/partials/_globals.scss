@@ -1,13 +1,3 @@
-x* {
-	box-sizing: border-box;
-}
-
 body {
-	background-color: $color-light;
 	font-family: $font_inter;
-}
-
-.container {
-	max-width: $container-width;
-	margin: auto;
 }
