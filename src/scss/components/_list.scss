@@ -1,0 +1,17 @@
+.ul{
+	&--ls{
+		border-left: 1px solid black;
+		padding-left: $spacing-1;
+		line-height: $spacing-3;
+	}
+	&--lm{
+		border-left: 1px solid black;
+		padding-left: $spacing-2;
+		line-height: $spacing-4;
+	}
+	&--ll{
+		border-left: 1px solid black;
+		padding-left: $spacing-3;
+		line-height: $spacing-5;
+	}
+}
