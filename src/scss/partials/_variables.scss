@@ -1,5 +1,24 @@
-$white: #FFFFFF;
-$gray: #64748B;
-$black: #000000;
-$blue: #0EA5E9;
+/* Colors */
+$color-light: #FFFFFF;
+$color-gray: #64748B;
+$color-dark: #000000;
+$color-primary-100: #F0F8FF;
+$color-primary-200: #C7E0F4;
+$color-primary-300: #9EC7E9;
+$color-primary-400: #0EA5E9;
+$color-primary-500: #0C7AAB;
+$color-primary-600: #0A4E6D;
+$color-primary-700: #07232F;
+
+/* Sizes */
 $container-width: 1500px;
+
+/* Spacing */
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 1rem;
+$spacing-4: 2rem;
+$spacing-5: 4rem;
+$spacing-6: 8rem;
+$spacing-7: 16rem;
+$spacing-8: 32rem;
