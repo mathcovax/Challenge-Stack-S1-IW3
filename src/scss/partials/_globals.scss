@@ -20,3 +20,12 @@ img {
 	width: rem(338);
 	height: rem(48);
 }
+
+button {
+	font-size: rem(12);
+	font-weight: bold;
+	border: none;
+	border-radius: $radius-8;
+	padding: $spacing-3 $spacing-3-5;
+	cursor: pointer;
+}

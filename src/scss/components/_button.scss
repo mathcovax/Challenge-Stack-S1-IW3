@@ -1,0 +1,17 @@
+.button {
+	&--primary {
+		background-color: var(--c-p);
+		color: var(--c-l);
+	}
+
+	&--secondary {
+		background-color: var(--c-d);
+		color: var(--c-l);
+	}
+
+	&--outline {
+		background-color: var(--c-l);
+		border: 1.5px solid var(--c-d);
+		color: var(--c-d);
+	}
+}
