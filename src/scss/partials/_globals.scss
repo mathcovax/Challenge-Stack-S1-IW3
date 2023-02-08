@@ -27,6 +27,31 @@ img {
 	height: rem(48);
 }
 
+input{
+	min-width: 211px;
+	border-radius: 8px;
+	border: 1px solid var(--c-s);
+	color: var(--c-s);
+	padding: $spacing-3;
+	outline: none;
+	
+	&:focus{
+		border: 1px solid var(--c-p);
+		color:(var(--c-p));
+
+		&::placeholder{
+			color: var(--c-p)
+		}
+
+
+	}
+	&:not(:placeholder-shown):not(:focus){
+		border: 1px solid black;
+		color: black;
+	}
+	
+}
+
 button {
 	font-size: rem(12);
 	font-weight: bold;
