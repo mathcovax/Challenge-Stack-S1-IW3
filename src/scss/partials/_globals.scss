@@ -1,3 +1,22 @@
 body {
 	font-family: $font_inter;
 }
+h1 {
+	font-size: rem(52);
+}
+h2 {
+	font-size: rem(36);
+}
+h3 {
+	font-size: rem(30);
+}
+p {
+	font-size: rem(12);
+}
+ul {
+	list-style-type: none;
+}
+img {
+	width: rem(338);
+	height: rem(48);
+}
