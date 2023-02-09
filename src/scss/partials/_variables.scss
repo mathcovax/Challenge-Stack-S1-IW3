@@ -31,12 +31,14 @@ $radius-8: 8px;
 $radius-full: 9999px;
 
 /* Spacing */
-$spacing-1: 0.25rem;
-$spacing-2: 0.5rem;
-$spacing-3: 1rem;
-$spacing-3-5: 1.5rem;
-$spacing-4: 2rem;
-$spacing-5: 4rem;
-$spacing-6: 8rem;
-$spacing-7: 16rem;
-$spacing-8: 32rem;
+$spacings: (
+	1: 0.25rem,
+	2: 0.5rem,
+	3: 1rem,
+	3.5: 1.5rem,
+	4: 2rem,
+	5: 4rem,
+	6: 8rem,
+	7: 16rem,
+	8: 32rem,
+);
