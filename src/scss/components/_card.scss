@@ -1,0 +1,56 @@
+.card{
+	display: flex;
+	flex-direction: column;
+	padding: $spacing-3;
+	gap: $spacing-3;
+	max-width: 420px;
+
+	> div {
+		display: flex;
+		gap: $spacing-3;
+
+		> :nth-child(1){
+			height: 56px;
+			aspect-ratio: 1/1;
+			flex-shrink: 0;
+			border-radius: 999px;
+			overflow: hidden;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		> :nth-child(2){
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			overflow: hidden;
+			align-items: flex-start;
+			flex-grow: 1;
+
+			h1{
+				font-size: rem(20);
+				text-overflow: ellipsis;
+				max-width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				color: var(--c-d);
+			}
+
+			h2{
+				font-size: rem(16);
+				text-overflow: ellipsis;
+				max-width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				color: var(--c-s);
+			}
+		}
+	}
+
+	> p {
+		font-size: rem(16);
+		color: var(--c-d);
+	}
+}
