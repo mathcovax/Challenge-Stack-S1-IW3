@@ -15,10 +15,6 @@ const config = {
 	module: {
 		rules: [
 			{
-				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-				type: "asset",
-			},
-			{
 				test: /\.html$/i,
 				use: "raw-loader",
 			},
@@ -27,7 +23,7 @@ const config = {
 	devServer: {
 		open: true,
 		hot: true,
-		port: 1506,
+		port: 80,
 		host: "0.0.0.0",
 		static: {
 			directory: path.resolve(__dirname, "public"),

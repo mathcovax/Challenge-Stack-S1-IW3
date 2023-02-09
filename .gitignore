@@ -3,3 +3,4 @@ dist
 public/css
 .vscode
 .github
+package-lock.json
