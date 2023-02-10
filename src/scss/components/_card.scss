@@ -12,12 +12,17 @@
 
 		> :nth-child(1){
 			height: 56px;
+			width: 56px;
 			aspect-ratio: 1/1;
 			flex-shrink: 0;
 			border-radius: 999px;
 			overflow: hidden;
 			display: flex;
 			align-items: center;
+			
+			> img {
+				height: 100%;
+			}
 		}
 
 		> :nth-child(2){

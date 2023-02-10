@@ -3,6 +3,7 @@ import "./components/list";
 import "./components/ico";
 import "./components/tab";
 import "./components/text-input";
+import "./components/btn";
 import Component, { getComp } from "./lib/component";
 
 export const currentScript = document.currentScript;

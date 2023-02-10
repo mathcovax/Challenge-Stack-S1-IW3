@@ -11,7 +11,7 @@ tab.data("slider", {});
 tab.method("tabClicked", function(event){
 	this.slider = {
 		width: event.target.offsetWidth + "px",
-		left: event.target.getBoundingClientRect().left + "px"
+		left: event.target.offsetLeft+ "px"
 	};
 	this.tab = event.target.arr;
 });
@@ -45,5 +45,6 @@ tab.mounted(function(){
 		];
 	}
 
-	setTimeout(() => this.tabClicked({target: this.refs.tabs.forChild[0]}), 1);
+	window.addEventListener("resize", () => this.tabClicked({target: this.refs.tabs.forChild[0]}));
+	setTimeout(() => this.tabClicked({target: this.refs.tabs.forChild[0]}), 5);
 });

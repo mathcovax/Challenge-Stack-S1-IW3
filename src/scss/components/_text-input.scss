@@ -2,13 +2,14 @@
 	position: relative;
 
 	> input {
-		padding: 6px 8px;
+		padding: map-get($spacings, 2);
 		border-radius: 4px;
 	}
 
 	> label {
 		position: absolute;
-		left: 6px;
+		left: map-get($spacings, 2);
+		padding: 0 map-get($spacings, 1);
 		transition: all 200ms;
 		top: 50%;
 		transform: translateY(-50%);

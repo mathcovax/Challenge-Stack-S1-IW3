@@ -50,10 +50,11 @@ img {
 input {
 	min-width: 320px;
 	max-width: 320px;
-	border-radius: 8px;
+	border-radius: map-get($spacings, 1);
 	border: 1px solid var(--c-s);
 	color: var(--c-s);
-	padding: map-get($spacings, 3);
+	font-size: rem(16);
+	padding: map-get($spacings, 2);
 	outline: none;
 
 	&:focus {
@@ -293,7 +294,27 @@ button {
 }
 
 .border {
-	border: 1px solid var(--c-s);
+	&--primary{
+		border: 1px solid var(--c-p);
+	}
+	
+	&--secondary{
+		border: 1px solid var(--c-s);
+	}
+
+	&--dark{
+		border: 1px solid var(--c-d);
+	}
+	
+	&--light{
+		border: 1px solid var(--c-l);
+	}
+}
+
+@for $i from 1 through 8 {
+	.rounded-#{$i}{
+		border-radius: map-get($spacings, $i);
+	}
 }
 
 @for $i from 1 through 12 {

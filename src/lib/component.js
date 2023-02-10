@@ -168,12 +168,13 @@ export default class Component{
 				this.refresh();
 			},
 			emit(name, ...args){
-				tag.events[name](...args);
+				if(tag.events !== undefined)tag.events[name](...args);
 			},
 			data : {},
 			slot: [...tag.children],
 			slotText: tag.innerText,
-			refs : {}
+			refs : {},
+			tag: tag
 		};
 
 		for(const [index, fnc] of Object.entries(this.#methods)){
