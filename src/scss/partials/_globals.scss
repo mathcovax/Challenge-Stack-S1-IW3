@@ -295,3 +295,47 @@ button {
 .border {
 	border: 1px solid var(--c-s);
 }
+
+@for $i from 1 through 12 {
+	.grid-cols-#{$i} {
+		display: grid;
+		grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+	}
+
+	.col-span-#{$i} {
+		grid-column: span #{$i} / span #{$i};
+	}
+
+	.col-start-#{$i} {
+		grid-column-start: #{$i};
+	}
+
+	.col-end-#{$i} {
+		grid-column-end: #{$i};
+	}
+}
+
+.col-auto {
+	grid-column: auto;
+}
+
+.col-span-full {
+	grid-column: 1 / -1;
+}
+
+.col-start-13 {
+	grid-column-start: 13;
+}
+
+.col-start-auto {
+	grid-column-start: auto;
+}
+
+.col-end-13 {
+	grid-column-end: 13;
+}
+
+.col-end-auto {
+	grid-column-end: auto;
+}
+

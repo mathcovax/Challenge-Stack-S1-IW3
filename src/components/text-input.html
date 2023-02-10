@@ -1,0 +1,12 @@
+<div>
+	<input 
+	ref="input" 
+	@input="inputed"
+	@focus="focused"
+	@blur="blured"
+	placeholder=" " 
+	type="text"
+	>
+
+	<label classer="{'focused': 'focus', 'stay': 'isNotEmptyValue'}">{{label}}</label>
+</div>

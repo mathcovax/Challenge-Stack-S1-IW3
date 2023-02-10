@@ -18,7 +18,13 @@ export default class Component{
 	}
 
 	#inner;
-	inner(value){
+	inner(value, http=false){
+		if(http === true){
+			const request = new XMLHttpRequest();
+			request.open("GET", value, false);
+			request.send(null);
+			value = request.responseText;
+		}
 		this.#inner = typeof value === "object"? value.outerHTML : value; 
 	}
 
@@ -61,6 +67,7 @@ export default class Component{
 			child_if: [],
 			child_classer: [],
 			child_styler: [],
+			child_props: [],
 			child_for: [],
 			refresh(){
 				for(const child of this.child_text){
@@ -96,6 +103,14 @@ export default class Component{
 				for(const child of this.child_styler){
 					for(const [stls, index] of Object.entries(child.styler)){
 						child.style.setProperty(stls, typeof this[index] === "function"? this[index](child) : this[index]);
+					}
+				}
+
+				for(const child of this.child_props){
+					for(const [props, index] of Object.entries(child.props)){
+						let value = typeof this[index] === "function"? this[index](child) : this[index];
+						if(value === false)child.removeAttribute(props);
+						else child.setAttribute(props, value);
 					}
 				}
 
@@ -242,6 +257,16 @@ export default class Component{
 						child.events[attr.slice(1)] = el._comp[child.getAttribute(attr)];
 						child.removeAttribute(attr);
 					}
+				}
+				
+				for(const props of Object.values(child.attributes)){
+					if(!props.name.startsWith(":"))continue;
+					if(child.props === undefined){
+						child.props = {};
+						el._comp.child_props.push(child);
+					}
+					child.props[props.name.slice(1)] = props.value;
+					child.removeAttribute(props.name);
 				}
 
 				if(child.getAttribute("if") !== null){

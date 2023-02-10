@@ -1,6 +1,7 @@
 [comp="carousel"]{
 	overflow: hidden;
 	position: relative;
+	user-select: none;
 
 	.container {
 		width: 100%;

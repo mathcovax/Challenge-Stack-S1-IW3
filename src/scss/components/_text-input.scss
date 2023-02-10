@@ -1,0 +1,30 @@
+[comp="text-input"]{
+	position: relative;
+
+	> input {
+		padding: 6px 8px;
+		border-radius: 4px;
+	}
+
+	> label {
+		position: absolute;
+		left: 6px;
+		transition: all 200ms;
+		top: 50%;
+		transform: translateY(-50%);
+		background: white;
+		color: var(--c-s);
+
+		&.focused{
+			top: 0%;
+			font-size: 0.8em;
+			color: var(--c-p);
+		}
+
+		&.stay:not(.focused){
+			top: 0%;
+			font-size: 0.8em;
+			color: var(--c-d);
+		}
+	}
+}
