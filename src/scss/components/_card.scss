@@ -1,13 +1,14 @@
 .card{
 	display: flex;
 	flex-direction: column;
-	padding: $spacing-3;
-	gap: $spacing-3;
+	padding: map-get($spacings, 3);
+	gap: map-get($spacings, 3);
 	max-width: 420px;
 
 	> div {
 		display: flex;
-		gap: $spacing-3;
+		gap: map-get($spacings, 3);
+		user-select: none;
 
 		> :nth-child(1){
 			height: 56px;
@@ -15,10 +16,8 @@
 			flex-shrink: 0;
 			border-radius: 999px;
 			overflow: hidden;
-
-			img {
-				height: 100%;
-			}
+			display: flex;
+			align-items: center;
 		}
 
 		> :nth-child(2){
