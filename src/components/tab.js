@@ -46,5 +46,4 @@ tab.mounted(function(){
 	}
 
 	setTimeout(() => this.tabClicked({target: this.refs.tabs.forChild[0]}), 1);
-	
 });
