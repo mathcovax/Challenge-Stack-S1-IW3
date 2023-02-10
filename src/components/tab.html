@@ -1,0 +1,14 @@
+<div>
+	<section class="tabs">
+		<div ref="tabs" classer="{'hightLight': 'isHightLight'}" @click="tabClicked" for="tabs">
+			{{arr}}
+		</div>
+	</section>
+	<div class="slider" styler="{'--slider-width': 'sliderWidth', '--slider-left': 'sliderLeft'}">
+		<div></div>
+	</div>
+
+	<section class="window">
+		<slot></slot>
+	</section>
+</div>

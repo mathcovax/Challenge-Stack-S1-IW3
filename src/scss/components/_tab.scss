@@ -1,0 +1,50 @@
+[comp="tab"]{
+	position: relative;
+	max-width: 100%;
+
+	.tabs{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		transition: all 500ms;
+
+		> .hightLight{
+			color: var(--c-p);
+		}
+
+		> :hover:not(.hightLight){
+			color: var(--c-s);
+		}
+	}
+
+	.slider{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: var(--slider-width);
+		left: var(--slider-left);
+		height: 2px;
+		transition: all 500ms;
+
+		> div{
+			background: var(--c-p);
+			width: 100%;
+			height: 100%;
+			transform: scaleX(1.2);
+			border-radius: 999px;
+		}
+	}
+
+	.window{
+		width: 100%;
+
+		> * {
+			width: 100%;
+		}
+	}
+
+	.hide{
+		display: none;
+	}
+}

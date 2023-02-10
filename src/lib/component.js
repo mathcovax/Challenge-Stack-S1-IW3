@@ -105,6 +105,20 @@ export default class Component{
 						let clone = child.cloneNode(true);
 						clone.style.display = "";
 						clone.arr = arr;
+						for(const event of Object.keys(child.events || {})){
+							clone[Component.events["@" + event]] = 
+								child[Component.events["@" + event]];
+						}
+
+						for(const [cls, index] of Object.entries(child.classer || {})){
+							for(const cl of cls.split(" ")){
+								clone.classList.toggle(cl, typeof this[index] === "function"? this[index](clone) : this[index]);
+							}
+						}
+						for(const [stls, index] of Object.entries(child.styler || {})){
+							clone.style.setProperty(stls, typeof this[index] === "function"? this[index](clone) : this[index]);
+						}
+
 						forArr.push(clone);
 						clone.innerHTML = clone.innerHTML.replace(
 							/\{\{arr(.*?)\}\}/g, 
@@ -137,6 +151,9 @@ export default class Component{
 				el.styler = obj;
 				this.child_styler.push(el);
 				this.refresh();
+			},
+			emit(name, ...args){
+				tag.events[name](...args);
 			},
 			data : {},
 			slot: [...tag.children],
@@ -210,10 +227,6 @@ export default class Component{
 			);
 		}
 		
-		for(const [index, fnc] of Object.entries(tag.events || {})){
-			el[index] = fnc;
-		}
-		
 		(function find(elo){
 			for(const child of [...elo.children]){
 				if(child.nodeName === "SLOT"){
@@ -222,12 +235,12 @@ export default class Component{
 					continue;
 				}
 
-				for(const event of Component.events){
-					if(child.getAttribute(event.attr) !== null){
-						child[event.fnc] = el._comp[child.getAttribute(event.attr)];
+				for(const [attr, fnc] of Object.entries(Component.events)){
+					if(child.getAttribute(attr) !== null){
+						child[fnc] = el._comp[child.getAttribute(attr)];
 						if(child.events === undefined)child.events = {};
-						child.events[event.fnc] = el._comp[child.getAttribute(event.attr)];
-						child.removeAttribute(event.attr);
+						child.events[attr.slice(1)] = el._comp[child.getAttribute(attr)];
+						child.removeAttribute(attr);
 					}
 				}
 
@@ -294,28 +307,13 @@ export default class Component{
 
 	};
 
-	static events = [
-		{
-			attr: "@click",
-			fnc: "onclick"
-		},
-		{
-			attr: "@focus",
-			fnc: "onfocus"
-		},
-		{
-			attr: "@blur",
-			fnc: "onblur"
-		},
-		{
-			attr: "@submit",
-			fnc: "onsubmit"
-		},
-		{
-			attr: "@input",
-			fnc: "oninput"
-		},
-	];
+	static events = {
+		"@click": "onclick",
+		"@focus": "onfocus",
+		"@blur": "onblur",
+		"@submit": "onsubmit",
+		"@input": "oninput",
+	};
 }
 
 
