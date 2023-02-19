@@ -1,0 +1,20 @@
+/* Styles pour le footer en ligne (pour les écrans larges) */
+footer {
+    justify-content: space-between;
+	.footer-logo {
+		position: relative;
+		bottom: 0;
+		left: 0;
+	  }
+}
+@media screen and (max-width: 767px) {
+    /* Styles pour le footer empilé (pour les écrans étroits) */
+	footer {
+		display: block;
+		.footer-logo {
+			float: none;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}
