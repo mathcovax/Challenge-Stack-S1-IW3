@@ -5,7 +5,12 @@ footer {
 		position: relative;
 		bottom: 0;
 		left: 0;
+		height: 32px;
+		width: auto;
 	  }
+	hr{
+	color: var(--c-s);
+	}
 }
 @media screen and (max-width: 767px) {
     /* Styles pour le footer empilé (pour les écrans étroits) */
@@ -15,6 +20,11 @@ footer {
 			float: none;
 			margin: 0 auto;
 			display: block;
+			height: 32px;
+			width: auto;
+		}
+		hr{
+			color: var(--c-s);
 		}
 	}
 }
