@@ -1,7 +1,9 @@
 export default class Component{
 	constructor(name){
+		this.name = name;
 		Component.components[name] = this;
 	}
+	name;
 
 	#props = {
 		
@@ -18,13 +20,7 @@ export default class Component{
 	}
 
 	#inner;
-	inner(value, http=false){
-		if(http === true){
-			const request = new XMLHttpRequest();
-			request.open("GET", value, false);
-			request.send(null);
-			value = request.responseText;
-		}
+	inner(value){
 		this.#inner = typeof value === "object"? value.outerHTML : value; 
 	}
 

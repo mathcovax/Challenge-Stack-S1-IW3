@@ -1,0 +1,8 @@
+.list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-left: map-get($spacings, 3);
+	border-left: 1px solid black;
+	line-height: map-get($spacings, 4);
+}

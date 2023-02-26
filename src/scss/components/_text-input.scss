@@ -15,6 +15,7 @@
 		transform: translateY(-50%);
 		background: white;
 		color: var(--c-s);
+		user-select: none;
 
 		&.focused{
 			top: 0%;

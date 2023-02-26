@@ -3,6 +3,7 @@
 	transition: all 0.2s ease;
 	font-size: rem(16);
 	overflow: hidden;
+	user-select: none;
 
 	> .ripple {
 		position: absolute;

@@ -1,0 +1,273 @@
+<header class="navbar">
+	<nav>
+		<div class="logo">
+			<img src="/assets/logo.png" alt="">
+		</div>
+
+		<ul>
+			<li class="hidden-960">
+				<a href="/home.html">Home</a>
+			</li>
+
+			<li class="hidden-960">
+				<a href="/docs.html">Docs</a>
+			</li>
+
+			<li class="hidden-960">|</li>
+
+			<li styler="{'width': 'widthSearch'}" class="search">
+				<input 
+				@focus="focusSearch" 
+				@blur="blurSearch" 
+				@input="inputSearch" 
+				ref="inputSearch" 
+				type="text"
+				>
+
+				<ico @click="magnifyClicked" size="20px">magnify</ico>
+			</li>
+
+			<li class="hidden-960">
+				<a href="https://github.com/mathcovax/Challenge-Stack">
+					<ico>github</ico>
+				</a>
+			</li>
+
+			<li
+			@blur="blurMenu"
+			@focus="focusMenu"
+			tabindex="0" 
+			class="show-960"
+			>
+				<ico @click="focusMenu">dots-vertical</ico>
+
+				<div if="menuIsOpen" class="menu">
+					<a href="/home.html">Home</a>
+					<a href="/docs.html">Docs</a>
+					<a href="https://github.com/mathcovax/Challenge-Stack">
+						<ico>github</ico>
+					</a>
+				</div>
+			</li>
+		</ul>
+
+		<div 
+		class="select" 
+		styler="{'top': 'topSelect', 'left': 'leftSelect', 'width': 'widthSelect'}"
+		>
+			<div 
+			if="ifFilterListIsEmpty" 
+			class="result"
+			>
+				aucun résultat
+			</div>
+
+			<div for="filterList" class="result">
+				<a href="{{arr.href}}" class="result">{{arr.name}}</a>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script>
+const navbar = new Component("navbar");
+navbar.inner(inner);
+navbar.data("widthSearch", "28px");
+navbar.data("topSelect", "-100%");
+navbar.data("leftSelect", "-100%");
+navbar.data("widthSelect", "0");
+navbar.data("filterList", []);
+navbar.data("list", [
+	{
+		name: "testfezc dce zc ze1ngb",
+		href: "1"
+	},
+	{
+		name: "test2",
+		href: "2"
+	},
+	{
+		name: "test3",
+		href: "3"
+	},
+	{
+		name: "test4",
+		href: "4"
+	}
+])
+navbar.data("menuIsOpen", false);
+
+navbar.method("focusSearch", function(){
+	this.topSelect = (this.refs.inputSearch.offsetTop + 30) + "px";
+	this.leftSelect = this.refs.inputSearch.offsetLeft + "px";
+	this.widthSearch = (this.refs.inputSearch.offsetWidth + 28) + "px";
+	this.widthSelect = this.refs.inputSearch.offsetWidth + "px";
+})
+navbar.method("blurSearch", function(){
+	setTimeout(() => {
+		this.widthSearch = "28px";
+		this.topSelect = "-100%";
+		this.leftSelect = "-100%";
+		this.widthSelect = "0";
+	}, 10);
+})
+navbar.method("magnifyClicked", function(){
+	setTimeout(() => {
+		this.refs.inputSearch.focus();
+	}, 10);
+})
+navbar.method("inputSearch", function(e){
+	this.filter(e.target.value);
+})
+navbar.method("filter", function(value){
+	let arr = []
+	for (let index = 0; index < this.list.length; index++) {
+		if(this.list[index].name.indexOf(value) > -1)arr.push(this.list[index]);
+		if(arr.length > 2)break;
+	}
+	this.filterList = arr;
+})
+navbar.method("ifFilterListIsEmpty", function(){
+	return this.filterList.length === 0;
+})
+navbar.method("focusMenu", function(){
+	this.menuIsOpen = true;
+})
+navbar.method("blurMenu", function(){
+	setTimeout(() => {
+		this.menuIsOpen = false;
+	}, 10);
+})
+
+navbar.mounted(function(){
+	this.filter("");
+	window.addEventListener("blur", () => this.refs.inputSearch.blur());
+});
+</script>
+
+<style>
+.navbar{
+	display: flex;
+	justify-content: center;
+	user-select: none;
+	padding: 0 10px;
+	height: 72px;
+	color: var(--c-s);
+	position: relative;
+}
+
+.navbar nav{
+	max-width: 1520px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar ul{
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	padding: 0;
+	margin: 0;
+}
+
+.navbar a {
+	color: inherit;
+    text-decoration: inherit;
+}
+
+.navbar .search{
+	border: solid 1px var(--c-d);
+	border-radius: 999px;
+	padding: 0 2px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	overflow: hidden;
+	height: 28px;
+	transition: width 300ms;
+}
+
+.navbar .search input{
+	width: 125px;
+	max-width: auto;
+	min-width: auto;
+	padding-left: 4px;
+	border-color: transparent;
+    padding: 0 4px;
+	font-family: inherit;
+    font-size: 100%;
+	font-weight: inherit;
+    line-height: inherit;
+	margin: 0;
+}
+
+.navbar .select{
+	position: absolute;
+	padding: 2px;
+	background: white;
+	border: solid 1px var(--c-d);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.navbar .result {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+.navbar .logo{
+	flex-shrink: 0;
+	width: 132px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar .logo img{
+	max-width: 100%;
+}
+
+.navbar .hidden-960{
+	display: none;
+}
+
+.navbar .show-960{
+	display: block;
+}
+
+.navbar .menu {
+	position: absolute;
+	right: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding: 5px;
+	background: white;
+	border: solid 1px var(--c-d);
+	border-radius: 4px;
+	top: calc(50% + 20px);
+	gap: 5px;
+}
+
+@media (min-width: 960px){
+	.navbar .hidden-960{
+		display: block;
+	}
+
+	.navbar .search input{
+		width: 200px;
+
+	}
+
+	.navbar .show-960{
+		display: none;
+	}
+}
+</style>
