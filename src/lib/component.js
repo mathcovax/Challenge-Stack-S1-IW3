@@ -169,6 +169,7 @@ export default class Component{
 			data : {},
 			slot: [...tag.children],
 			slotText: tag.innerText,
+			slotHTML: tag.innerHTML,
 			refs : {},
 			tag: tag
 		};
@@ -352,6 +353,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	if(CR.getAttribute("use-tag") !== null){
 		for(const comp of Object.keys(Component.components)){
 			for(const el of document.querySelectorAll(comp)){
+				if(el.getAttribute("ignore") !== null){
+					el.removeAttribute("ignore");
+					continue;
+				}
+				
 				if(el._comp === undefined){
 					el.setAttribute("comp", comp);
 					Component.components[comp].assign(el);

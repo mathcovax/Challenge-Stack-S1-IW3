@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Design Guide - WingJS</title>
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/main.js" use-tag></script>
 </head>
@@ -59,17 +59,26 @@
 			<button class="button button--outline">Outline</button>
 		</div>
 
+		<p class="text-lg color-dark bold mt-4">Animate buttons</p>
+
+		<div class="flex gap-x-3">
+			<btn class="button--primary">Primary</btn>
+			<btn class="button--secondary">Secondary</btn>
+			<btn class="button--outline">Outline</btn>
+		</div>
+
 		<p class="text-lg color-dark bold mt-4">Inputs</p>
 
 		<div class="flex flex-col gap-y-2">
 			<input type="text" placeholder="Go focus">
+			<text-input label="Go focus"></text-input>
 		</div>
 
 		<p class="text-lg color-dark bold mt-4">Lists</p>
 
 		<div class="flex flex-col gap-y-3">
 			<label class="text-lg bold">List Title</label>
-			<ul>
+			<ul class="list">
 				<li>List Item 1</li>
 				<li>List Item 2</li>
 				<li>List Item 3</li>

@@ -43,11 +43,11 @@ li {
 input {
 	min-width: 320px;
 	max-width: 320px;
-	border-radius: map-get($spacings, 1);
+	border-radius: 8px;
 	border: 1px solid var(--c-s);
 	color: var(--c-s);
 	font-size: rem(16);
-	padding: map-get($spacings, 2);
+	padding: map-get($spacings, 3);
 	outline: none;
 
 	&:focus {

@@ -2,8 +2,8 @@
 	position: relative;
 
 	> input {
-		padding: map-get($spacings, 2);
-		border-radius: 4px;
+		padding: map-get($spacings, 3);
+		border-radius: 8px;
 	}
 
 	> label {

@@ -6,7 +6,7 @@
 
 		<ul>
 			<li class="hidden-960">
-				<a href="/home.html">Home</a>
+				<a href="/">Home</a>
 			</li>
 
 			<li class="hidden-960">
@@ -147,13 +147,16 @@ navbar.mounted(function(){
 
 <style>
 .navbar{
+	top: 0;
 	display: flex;
 	justify-content: center;
 	user-select: none;
 	padding: 0 10px;
 	height: 72px;
 	color: var(--c-s);
-	position: relative;
+	position: fixed;
+	width: 100%;
+	background: white;
 }
 
 .navbar nav{

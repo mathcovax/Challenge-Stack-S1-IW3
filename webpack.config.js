@@ -23,7 +23,7 @@ const config = {
 	devServer: {
 		open: true,
 		hot: true,
-		port: 80,
+		port: 1506,
 		host: "0.0.0.0",
 		static: {
 			directory: path.resolve(__dirname, "public"),

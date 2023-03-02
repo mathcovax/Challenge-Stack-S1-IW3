@@ -1,12 +1,12 @@
 [comp="btn"]{
 	position: relative;
-	transition: all 0.2s ease;
-	font-size: rem(16);
+	transition: all 300s ease;
+	font-size: rem(12);
 	overflow: hidden;
 	user-select: none;
+	padding: 0;
 
 	> .ripple {
-		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -14,9 +14,10 @@
 		overflow: hidden;
 		background: transparent;
 		transition: all 300ms;
+		padding: map-get($spacings, 3) map-get($spacings, 3.5);
 
 		&:hover {
-			background: rgba(0,0,0,0.1);
+			background: rgba(255,255,255,0.1);
 		}
 
 		> .circle {
@@ -32,10 +33,10 @@
 				animation: ripple 400ms ease-in;
 			}
 		}
-	}
 
-	> p {
-		position: relative;
+		> p {
+			position: relative;
+		}
 	}
 }
 
