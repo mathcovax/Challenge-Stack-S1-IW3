@@ -1,0 +1,52 @@
+<footer class="p-4 footerbar flex justify-center">
+	<div class="content">
+		<div class="flex linkbloc">
+			<div class="flex flex-col gap-y-3">
+				<p class="bold">Getting Started</p>
+				<p>Installation</p>
+				<p>Usage</p>
+				<p>Examples</p>
+			</div>
+			<div class="flex flex-col gap-y-3">
+				<p class="bold">Resources</p>
+				<p>Documentation</p>
+				<p>API Reference</p>
+				<p>FAQ</p>
+			</div>
+			<div class="flex flex-col gap-y-3">
+				<p class="bold">Community</p>
+				<p>GitHub</p>
+				<p>Forums</p>
+				<p>Blog</p>
+			</div>
+			<div class="flex flex-col gap-y-3">
+				<p class="bold">Contact</p>
+				<p>Email</p>
+				<p>Phone</p>
+				<p>Address</p>
+			</div>
+		</div>
+		<hr class="my-4">
+		<img class="footer-logo" src="./assets/Logo_3.png" alt="logo-footer">
+	</div>
+</footer>
+
+<script>
+const footerbar = new Component("footerbar");
+footerbar.inner(inner);
+</script>
+
+<style>
+.footerbar{
+	width: 100%;
+}
+
+.footerbar .content{
+	max-width: 1500px;
+	width: 1500px;
+}
+
+.footerbar .linkbloc{
+	gap: 15%;
+}
+</style>
