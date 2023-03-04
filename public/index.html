@@ -11,46 +11,105 @@
 <body>
 	<navbar></navbar>
 	
-	<main>
-		<section class="section1 flex flex-col items-center justify-center mt-5">
+	<main class="flex flex-col items-center">
+		<section class="index--section1 flex flex-col items-center justify-center mt-5">
 			<h1 class="text-center">Fly with WingJS</h1>
 			<h3 class="text-center"> Build your next ideas even faster with our new component-based framework </h3>
 
 			<button class="button button--primary">Get started</button>
 		</section>
 
-		<h2> Rapidly build modern websites without ever leaving your HTML</h2>
-		<p>
-			A utility-first JS framework packed with classes like flex, pt-4, 
-			text-center and rotate-90 that can be composed to build any design, directly in 
-			your markup.
-		</p>
+		
+		<section class="flex flex-col items-center justify-center mt-5 px-3">
+			<h2 class="text-center">Rapidly build modern websites without ever leaving your HTML</h2>
+			<p class="text-center pt-3">
+				A utility-first JS framework packed with classes like flex, pt-4, 
+				text-center and rotate-90 that can be composed to build any design, directly in 
+				your markup.
+			</p>
 
-		<p>
-			<code>
-					&lt; <span class="tag"> figure </span> <span class="className">class </span>="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800"> <br/>
-					&lt; <span> img </span> > class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/sarah-dayan.jpg" alt="" width="384" height="512"> <br/>
-					&lt; <span class="tag">div</span> <span class="className"> class</span>="pt-6 md:p-8 text-center md:text-left space-y-4"> <br/>
-						&lt; blockquote> <br/>
-							&lt; p class="text-lg font-medium"> “wingJS is the only framework that I've seen scale on large teams. It’s easy to customize, adapts to any design, and the build size is tiny.” 
-							&lt;/p>
-						&lt; /blockquote>
-						&lt; figcaption class="font-medium">
-							&lt; div class="text-sky-500 dark:text-sky-400">
-								Sarah Dayan
-							&lt; /div>
-							&lt; div class="text-slate-700 dark:text-slate-500">
-								Staff Engineer, Algolia
-							&lt; /div>
-						&lt; /figcaption>
-				&lt; /figure>
-			</code>
-		</p>
+			<div class="flex items-center justify-center gap-x-4 mt-3">
 
-		<section>
+<pre class="code p-3 rounded-2" style="tab-size: 30px;"><code><span class="chevron">&lt;<span class="tag">carousel</span> <span class="attribut">duration</span>=<span class="quot">&quot;500ms&quot;</span> <span class="attribut">arrow-on-hover</span> <span class="attribut">class</span>=<span class="quot">&quot;border--secondary rounded-2&quot;</span>&gt;</span>
+	<span class="chevron">&lt;<span class="tag">div</span> <span class="attribut">class</span>=<span class="quot">&quot;card&quot;</span>&gt;</span>
+		<span class="chevron">&lt;<span class="tag">div</span>&gt;</span>
+			<span class="chevron">&lt;<span class="tag">div</span>&gt;</span>
+				<span class="chevron">&lt;<span class="tag">img</span> <span class="attribut">src</span>=<span class="quot">&quot;./assets/Kamal-HENNOU.jpg&quot;</span>&gt;</span>
+			<span class="chevron">&lt;/<span class="tag">div</span>&gt;</span>
+			<span class="chevron">&lt;<span class="tag">div</span>&gt;</span>
+				<span class="chevron">&lt;<span class="tag">h1</span>&gt;</span>Kamal HENNOU<span class="chevron">&lt;/<span class="tag">h1</span>&gt;</span>
 
+				<span class="chevron">&lt;<span class="tag">h2</span>&gt;</span>School Director<span class="chevron">&lt;/<span class="tag">h2</span>&gt;</span>
+			<span class="chevron">&lt;/<span class="tag">div</span>&gt;</span>
+		<span class="chevron">&lt;/<span class="tag">div</span>&gt;</span>
+		<span class="chevron">&lt;<span class="tag">p</span>&gt;</span>
+			If I had to recommend a way of getting into 
+			programming today, it would be HTML + CSS with wingJS.
+		<span class="chevron">&lt;/<span class="tag">p</span>&gt;</span>
+	<span class="chevron">&lt;/<span class="tag">div</span>&gt;</span>
+	<span class="chevron">&lt;<span class="tag">img</span> <span class="attribut">src</span>=<span class="quot">&quot;./assets/Kamal-HENNOU.jpg&quot;</span>&gt;</span>
+	<span class="chevron">&lt;<span class="tag">img</span> <span class="attribut">src</span>=<span class="quot">&quot;./assets/Jeremy-Serval.jpeg&quot;</span>&gt;</span>
+	<span class="chevron">&lt;<span class="tag">img</span> <span class="attribut">src</span>=<span class="quot">&quot;./assets/Adrien-Morin.jpg&quot;</span>&gt;</span>
+<span class="chevron">&lt;/<span class="tag">carousel</span>&gt;</span></code></pre>
+
+				<carousel duration="500ms" arrow-on-hover class="border--secondary rounded-2">
+					<div class="card">
+						<div>
+							<div>
+								<img src="./assets/Kamal-HENNOU.jpg">
+							</div>
+
+							<div>
+								<h1>Kamal HENNOU</h1>
+
+								<h2>School Director</h2>
+							</div>
+						</div>
+
+						<p>
+							If I had to recommend a way of getting into programming today, it would be HTML + CSS with wingJS.
+						</p>
+					</div>
+
+					<img src="./assets/Kamal-HENNOU.jpg">
+
+					<img src="./assets/Jeremy-Serval.jpeg">
+
+					<img src="./assets/Adrien-Morin.jpg">
+				</carousel>
+			</div>
+		</section>
+
+		<section class="index--section3 flex flex-col items-center justify-center px-3">
+			<h2 class="py-4">Why you should use WingJS</h2>
+
+			<p class="text-center pb-3">
+				WingJS is a JavaScript framework that makes it easier to develop web applications.
+				It is designed to provide a comprehensive set of tools and features that make it easier to build dynamic,
+				scalable, and high-performance web applications.
+			</p>
+			<p class="text-center pb-3">
+				WingJS is built using TypeScript, a statically typed programming language that is a superset of JavaScript.
+				This allows WingJS developers to write high-quality and maintainable code. The framework uses a component-based architecture,
+				which allows developers to build reusable UI components and structure their applications in a modular way.
+			</p>
+			<p class="text-center pb-3">
+				WingJS provides powerful features such as two-way data binding, dependency injection, and a comprehensive set of tools for building forms,
+				handling HTTP requests, and testing. The framework's change detection mechanism updates the UI efficiently, 
+				reducing the number of re-renders and improving the overall speed of the application.
+			</p>
+			<p class="text-center pb-3">
+				WingJS has a large and active community that provides a wealth of resources, including tutorials, videos, and forums.
+				The framework also has a rich ecosystem of plugins and libraries that developers can use to extend the functionality of their applications.
+			</p>
+			<p class="text-center pb-3">
+				If you're looking to build complex and dynamic web applications, WingJS is a great choice. Its combination of performance, 
+				ease of use, and versatility make it a popular choice for many developers. 
+				Whether you're a beginner or an experienced programmer, WingJS is a framework that is sure to meet your needs.
+			</p>
 		</section>
 	</main>
+
 	<footer>
 	</footer>
 </body>
