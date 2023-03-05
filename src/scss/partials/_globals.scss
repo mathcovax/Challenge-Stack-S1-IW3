@@ -98,6 +98,10 @@ button {
 
 /* Display */
 
+.w-full {
+	width: 100%;
+}
+
 .max-w-md {
 	max-width: rem(500);
 }
@@ -316,6 +320,10 @@ button {
 
 .justify-center {
 	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
 }
 
 .border {
