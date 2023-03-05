@@ -3,31 +3,31 @@
 		<div class="flex linkbloc">
 			<div class="flex flex-col gap-y-3">
 				<p class="bold">Getting Started</p>
-				<p>Installation</p>
-				<p>Usage</p>
-				<p>Examples</p>
+				<a href="/docs.html#installation">Installation</a>
+				<a href="/docs.html#installation">Usage</a>
+				<a href="/docs.html#components">Examples</a>
 			</div>
 			<div class="flex flex-col gap-y-3">
 				<p class="bold">Resources</p>
-				<p>Documentation</p>
-				<p>API Reference</p>
-				<p>FAQ</p>
+				<a href="/docs.html">Documentation</a>
+				<a href="#">API Reference</a>
+				<a href="#">FAQ</a>
 			</div>
 			<div class="flex flex-col gap-y-3">
 				<p class="bold">Community</p>
-				<p>GitHub</p>
-				<p>Forums</p>
-				<p>Blog</p>
+				<a href="https://github.com/mathcovax/Challenge-Stack">GitHub</a>
+				<a href="#">Forums</a>
+				<a href="#">Blog</a>
 			</div>
 			<div class="flex flex-col gap-y-3">
 				<p class="bold">Contact</p>
-				<p>Email</p>
-				<p>Phone</p>
-				<p>Address</p>
+				<a href="#">contact@wing.js</a>
+				<a href="#">01 56 06 90 41</a>
+				<a href="#">75012 Paris</a>
 			</div>
 		</div>
 		<hr class="my-4">
-		<img class="footer-logo" src="./assets/Logo_3.png" alt="logo-footer">
+		<a href="/home.html"></a><img class="footer-logo" src="./assets/Logo_3.png" alt="logo-footer">
 	</div>
 </footer>
 
@@ -37,16 +37,45 @@ footerbar.inner(inner);
 </script>
 
 <style>
-.footerbar{
-	width: 100%;
+.footerbar {
+  width: 100%;
+  user-select: none;
 }
 
-.footerbar .content{
-	max-width: 1500px;
-	width: 1500px;
+.footerbar a {
+  color: var(--c-d);
 }
 
-.footerbar .linkbloc{
-	gap: 15%;
+.footerbar .content {
+  max-width: 1500px;
+  width: 100%;
+  padding: 0 1rem;
 }
+
+.footerbar .linkbloc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footerbar .flex-col {
+  flex-basis: calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 640px) {
+  .footerbar .flex-col {
+    flex-basis: calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footerbar .flex-col {
+    flex-basis: calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
+  }
+}
+
 </style>
