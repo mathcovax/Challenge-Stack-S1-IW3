@@ -337,6 +337,8 @@ button {
 	}
 }
 
+/* Border radius */
+
 @for $i from 1 through 8 {
 	.rounded-#{$i}{
 		border-radius: map-get($spacings, $i);
