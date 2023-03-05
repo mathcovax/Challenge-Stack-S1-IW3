@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<hr class="my-4">
-		<a href="/home.html"></a><img class="footer-logo" src="./assets/Logo_3.png" alt="logo-footer">
+		<img class="footer-logo" src="./assets/logo.png" alt="logo-footer">
 	</div>
 </footer>
 
@@ -64,6 +64,10 @@ footerbar.inner(inner);
   padding: 0.5rem;
 }
 
+.footerbar img{
+	max-width: 100%;
+}
+
 @media screen and (min-width: 640px) {
   .footerbar .flex-col {
     flex-basis: calc(33.33% - 1rem);
@@ -75,6 +79,10 @@ footerbar.inner(inner);
   .footerbar .flex-col {
     flex-basis: calc(25% - 1rem);
     max-width: calc(25% - 1rem);
+  }
+
+  .footerbar img{
+	width: 200px;
   }
 }
 

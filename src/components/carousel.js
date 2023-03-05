@@ -26,5 +26,6 @@ carousel.mounted(function(){
 				"hide": "isHidden",
 			}
 		);
+		slot.setAttribute("draggable", false);
 	}
 });

@@ -221,7 +221,7 @@ button {
 
 /* Spacing */
 
-@for $i from 1 through 8 {
+@for $i from 0 through 8 {
 	.m-#{$i} {
 		margin: map-get($spacings, $i);
 	}
@@ -386,4 +386,16 @@ button {
 
 .col-end-auto {
 	grid-column-end: auto;
+}
+
+.select-none{
+	user-select: none;
+}
+
+.select-text{
+	user-select: text;
+}
+
+.select-all{
+	user-select: all;
 }

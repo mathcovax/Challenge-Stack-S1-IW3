@@ -19,7 +19,7 @@
 
 			<li class="hidden-960">|</li>
 
-			<li styler="{'width': 'widthSearch'}" class="search">
+			<li styler="{'width': 'widthSearch', '--border': 'borderSearch'}" class="search">
 				<input 
 				@focus="focusSearch" 
 				@blur="blurSearch" 
@@ -48,6 +48,7 @@
 				<div if="menuIsOpen" class="menu">
 					<a href="/home.html">Home</a>
 					<a href="/docs.html">Docs</a>
+					<a href="/design_guide.html">Design Guide</a>
 					<a href="https://github.com/mathcovax/Challenge-Stack">
 						<ico>github</ico>
 					</a>
@@ -81,6 +82,7 @@ navbar.data("topSelect", "-100%");
 navbar.data("leftSelect", "-100%");
 navbar.data("widthSelect", "0");
 navbar.data("filterList", []);
+navbar.data("borderSearch", "var(--c-l)");
 navbar.data("list", [
 	{
 		name: "testfezc dce zc ze1ngb",
@@ -104,8 +106,9 @@ navbar.data("menuIsOpen", false);
 navbar.method("focusSearch", function(){
 	this.topSelect = (this.refs.inputSearch.offsetTop + 30) + "px";
 	this.leftSelect = this.refs.inputSearch.offsetLeft + "px";
-	this.widthSearch = (this.refs.inputSearch.offsetWidth + 28) + "px";
+	this.widthSearch = (this.refs.inputSearch.offsetWidth + 33) + "px";
 	this.widthSelect = this.refs.inputSearch.offsetWidth + "px";
+	this.borderSearch = "var(--c-d)";
 })
 navbar.method("blurSearch", function(){
 	setTimeout(() => {
@@ -113,6 +116,7 @@ navbar.method("blurSearch", function(){
 		this.topSelect = "-100%";
 		this.leftSelect = "-100%";
 		this.widthSelect = "0";
+		this.borderSearch = "var(--c-l)";
 	}, 10);
 })
 navbar.method("magnifyClicked", function(){
@@ -161,6 +165,7 @@ navbar.mounted(function(){
 	position: fixed;
 	width: 100%;
 	background: white;
+	z-index: 1;
 }
 
 .navbar nav{
@@ -186,7 +191,7 @@ navbar.mounted(function(){
 }
 
 .navbar .search{
-	border: solid 1px var(--c-d);
+	border: solid 1px var(--border);
 	border-radius: 999px;
 	padding: 0 2px;
 	display: flex;
@@ -194,7 +199,8 @@ navbar.mounted(function(){
 	justify-content: flex-end;
 	overflow: hidden;
 	height: 28px;
-	transition: width 300ms;
+	transition: all 300ms;
+	cursor: pointer;
 }
 
 .navbar .search input{
@@ -209,6 +215,7 @@ navbar.mounted(function(){
 	font-weight: inherit;
     line-height: inherit;
 	margin: 0;
+	margin-right: 5px;
 }
 
 .navbar .select{
