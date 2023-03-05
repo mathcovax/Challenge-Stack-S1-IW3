@@ -9,6 +9,8 @@
 		transition: all 500ms;
 		user-select: none;
 		cursor: pointer;
+		padding-top: 16px;
+		padding-bottom: 16px;
 
 		> .hightLight{
 			color: var(--c-p);
@@ -42,7 +44,7 @@
 		position: absolute;
 		width: 100%;
 		height: calc(100% - 25px);
-		margin-top: 25px;
+		margin-top: 56px;
 		top: 0;
 	}
 
