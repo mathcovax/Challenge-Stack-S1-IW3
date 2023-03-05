@@ -5,15 +5,15 @@
 		</div>
 
 		<ul>
-			<li class="hidden-960">
+			<li class="hidden-960 link">
 				<a href="/">Home</a>
 			</li>
 
-			<li class="hidden-960">
+			<li class="hidden-960 link">
 				<a href="/docs.html">Docs</a>
 			</li>
 
-			<li class="hidden-960">
+			<li class="hidden-960 link">
 				<a href="/design_guide.html">Design Guide</a>
 			</li>
 
@@ -68,7 +68,7 @@
 			</div>
 
 			<div for="filterList" class="result">
-				<a href="{{arr.href}}" class="result">{{arr.name}}</a>
+				<a class="link" href="{{arr.href}}" class="result">{{arr.name}}</a>
 			</div>
 		</div>
 	</nav>
@@ -85,21 +85,53 @@ navbar.data("filterList", []);
 navbar.data("borderSearch", "var(--c-l)");
 navbar.data("list", [
 	{
-		name: "testfezc dce zc ze1ngb",
-		href: "1"
+		name: "Presentation",
+		href: "/docs.html#presentation"
 	},
 	{
-		name: "test2",
-		href: "2"
+		name: "Installation",
+		href: "/docs.html"
 	},
 	{
-		name: "test3",
+		name: "Start using",
 		href: "3"
 	},
 	{
-		name: "test4",
-		href: "4"
-	}
+		name: "Inputs",
+		href: "/docs.html#inputs"
+	},
+	{
+		name: "Buttons",
+		href: "/docs.html#buttons"
+	},
+	{
+		name: "Lists",
+		href: "/docs.html#lists"
+	},
+	{
+		name: "Typography",
+		href: "/docs.html#typography"
+	},
+	{
+		name: "Form",
+		href: "/docs.html#form"
+	},
+	{
+		name: "Card",
+		href: "/docs.html#card"
+	},
+	{
+		name: "Icon",
+		href: "/docs.html#icon"
+	},
+	{
+		name: "Carousel",
+		href: "/docs.html#carousel"
+	},
+	{
+		name: "Tab",
+		href: "/docs.html#tab"
+	},
 ])
 navbar.data("menuIsOpen", false);
 
@@ -117,7 +149,7 @@ navbar.method("blurSearch", function(){
 		this.leftSelect = "-100%";
 		this.widthSelect = "0";
 		this.borderSearch = "var(--c-l)";
-	}, 10);
+	}, 100);
 })
 navbar.method("magnifyClicked", function(){
 	setTimeout(() => {
@@ -130,7 +162,7 @@ navbar.method("inputSearch", function(e){
 navbar.method("filter", function(value){
 	let arr = []
 	for (let index = 0; index < this.list.length; index++) {
-		if(this.list[index].name.indexOf(value) > -1)arr.push(this.list[index]);
+		if(this.list[index].name.toLowerCase().indexOf(value.toLowerCase()) > -1)arr.push(this.list[index]);
 		if(arr.length > 2)break;
 	}
 	this.filterList = arr;
@@ -201,6 +233,10 @@ navbar.mounted(function(){
 	height: 28px;
 	transition: all 300ms;
 	cursor: pointer;
+}
+
+.navbar .link:hover{
+	text-decoration: underline;
 }
 
 .navbar .search input{
