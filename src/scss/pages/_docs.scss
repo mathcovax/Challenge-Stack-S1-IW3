@@ -18,6 +18,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		
+		a:hover{
+			color: var(--c-d);
+			transition: all 0.3s;
+		}
 	}
 
 	&content {
@@ -40,6 +45,77 @@
 		iframe{
 			border: 0;
 			width: 800px;
+		}
+	}
+
+	&topbarMenu{
+		display: none;
+	}
+}
+
+@media (max-width: 960px) {
+	.docs--{
+		&main{
+			width: 100%;
+			padding-right: 10px;
+		}
+
+		&sidebar {
+			padding-top: 10px;
+			position: absolute;
+			background: white;
+			width: auto;
+			left: 0;
+			padding-left: 20px;
+			padding-right: 20px;
+			height: 100%;
+			z-index: 2;
+			transform: translateX(-100%);
+			transition: all 0.3s;
+		}
+
+		&bgSidebar{
+			position: fixed;
+			background: rgba(0,0,0,0.30);
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2;
+		}
+
+		&topbarMenu{
+			top: 72px;
+			width: 100%;
+			position: absolute;
+			right: 0px;
+			background: white;
+			display: flex;
+			justify-content: flex-end;
+			padding-right: 10px;
+			z-index: 1;
+		}
+
+		&content{
+			padding-top: 25px;
+		}
+
+		&splitbar{
+			display: none;
+		}
+
+		&code{
+			width: 100%;
+			overflow-x: scroll !important;
+		}
+
+		&form{
+			overflow: scroll; 
+			width: 100%;
+		}
+
+		&footer{
+			margin-right: 0;
 		}
 	}
 }

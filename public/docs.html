@@ -6,12 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/main.js" register="/components/navbar.html" use-tag></script>
+	<script src="/js/sideBare.js" defer></script>
 	<title>Docs</title>
 </head>
 <body class="flex flex-col justify-content items-center select-none">
 	<navbar></navbar>
 
 	<main class="docs--main">
+		<div class="docs--bgSidebar"></div>
 		<section class="docs--sidebar">
 			<div class="flex flex-col gap-y-3">
 				<a href="#getstarted"><label class="text-lg bold">Get Started</label></a>
@@ -35,11 +37,15 @@
 					<li><a href="#tab">Tab</a></li>
 				</ul>
 			</div>
+
 		</section>
 
 		<div class="docs--splitbar"></div>
+		<div class="docs--topbarMenu"><ico>menu</ico></div>
 
 		<section scrollable class="docs--content flex flex-col gap-y-5">
+			
+
 			<div id="getstarted" class="flex flex-col gap-y-2">
 				<p class="text-xxs color-primary black">Tutorial</p>
 				<h3 id="getstartedwith">Get started with WingJS</h3>
@@ -59,7 +65,7 @@
 					<p class="color-secondary">
 						Start the installation by cloning the repository from GitHub.
 					</p>
-					<pre class="max-w-md code rounded-2 p-3"><code>git clone <span class="quote">https://github.com/mathcovax/Challenge-Stack.git</span></code></pre>
+					<pre class="max-w-md code docs--code rounded-2 p-3"><code>git clone <span class="quote">https://github.com/mathcovax/Challenge-Stack.git</span></code></pre>
 				</div>
 
 				<!-- Docker -->
@@ -70,7 +76,7 @@
 					<p class="color-secondary">
 						Build the project environment with Docker.
 					</p>
-					<pre class="max-w-md code rounded-2 p-3"><code>docker-compose up <span class="quote">--d</span></code></pre>
+					<pre class="max-w-md code docs--code rounded-2 p-3"><code>docker-compose up <span class="quote">--d</span></code></pre>
 				</div>
 
 				<!-- Run the framework -->
@@ -81,7 +87,7 @@
 					<p class="color-secondary">
 						Start a development webpack server to run the project on a localhost.
 					</p>
-					<pre class="max-w-md code rounded-2 p-3"><code>npm run <span class="quote">dev</span></code></pre>
+					<pre class="max-w-md code docs--code rounded-2 p-3"><code>npm run <span class="quote">dev</span></code></pre>
 				</div>
 			</div>
 
@@ -101,7 +107,7 @@
 					<p class="bold">
 						Inputs
 					</p>
-					<code class="max-w-md code rounded-2 p-3">
+					<code class="max-w-md code docs--code rounded-2 p-3">
 						<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span><br>
 						<br>
 						<span class="bracket">&lt;<span class="tag">text-input</span> <span class="attribute">label</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span><span class="bracket">&lt;/<span class="tag">text-input</span>&gt;</span>
@@ -115,7 +121,7 @@
 					<p class="bold">
 						Buttons
 					</p>
-					<code class="max-w-md code rounded-2 p-3">
+					<code class="max-w-md code docs--code rounded-2 p-3">
 						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--primary&quot;</span>&gt;</span>Primary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
 						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--secondary&quot;</span>&gt;</span>Secondary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
 						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--outline&quot;</span>&gt;</span>Outline<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
@@ -141,7 +147,7 @@
 					<p class="bold">
 						Lists
 					</p>
-					<pre class="max-w-md code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">ul</span>&gt;</span></span>
+					<pre class="max-w-md code docs--code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">ul</span>&gt;</span></span>
 	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 1<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
 	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 2<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
 	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 3<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
@@ -158,7 +164,7 @@
 					<p class="bold">
 						Typography
 					</p>
-					<code class="max-w-md code rounded-2 p-3">
+					<code class="max-w-md code docs--code rounded-2 p-3">
 						<span class="bracket">&lt;<span class="tag">h1</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h1</span>&gt;</span><br>
 						<span class="bracket">&lt;<span class="tag">h2</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h2</span>&gt;</span><br>
 						<span class="bracket">&lt;<span class="tag">h3</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h3</span>&gt;</span><br>
@@ -178,7 +184,7 @@
 						Form
 					</p>
 		
-<pre class="code rounded-2 p-3 max-w-md"><code><span class="bracket">&lt;<span class="tag">form</span> <span class="attribute">class</span>=<span class="quote">&quot;form&quot;</span>&gt;</span>
+<pre class="code docs--code rounded-2 p-3 max-w-md"><code><span class="bracket">&lt;<span class="tag">form</span> <span class="attribute">class</span>=<span class="quote">&quot;form&quot;</span>&gt;</span>
 	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;fast-name&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>Last Name<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
 	<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Last Name&quot;</span>&gt;</span>
 
@@ -197,7 +203,7 @@
 	<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">type</span>=<span class="quote">&quot;submit&quot;</span>&gt;</span>Submit<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span>
 <span class="bracket">&lt;/<span class="tag">form</span>&gt;</span></code></pre>
 
-					<form class="form">
+					<form class="form docs--form">
 						<label for="fast-name" class="bold">Last Name</label>
 						<input type="text" placeholder="Last Name">
 
@@ -222,7 +228,7 @@
 					<p class="bold">
 						Card
 					</p>
-					<pre class="max-w-md code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="quote">&quot;card border--secondary rounded-1&quot;</span>&gt;</span></span>
+					<pre class="max-w-md code docs--code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="quote">&quot;card border--secondary rounded-1&quot;</span>&gt;</span></span>
 	<span class="bracket">&lt;<span class="tag">div</span>&gt;</span></span>
 		<span class="bracket">&lt;<span class="tag">div</span>&gt;</span></span>
 			<span class="bracket">&lt;<span class="tag">h1</span>&gt;</span>Lorem ipsum<span class="bracket">&lt;/<span class="tag">h1</span>&gt;</span>
@@ -256,45 +262,44 @@
 						</p>
 					</div>
 				</div>
-			</div>
 
-			<div class="flex flex-col gap-y-3" id="icon">
-				<p class="bold">
-					Icon
-				</p>
-
-				<code class="code p-3 rounded-2 max-w-md">
-					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>check<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgb(138, 43, 226)&quot;</span>&gt;</span>github<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;blue&quot;</span>&gt;</span>account<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>pig-variant<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;red&quot;</span>&gt;</span>liquid-spot<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;#FFD700&quot;</span>&gt;</span>cheese<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>cheese-off<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
-					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgba(0, 0, 0, 0.12)&quot;</span>&gt;</span>trash-can<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span>
-				</code>
-
-				<div class="flex">
-					<ico>check</ico>
-					<ico color="rgb(138, 43, 226)">github</ico>
-					<ico color="blue">account</ico>
-					<ico>pig-variant</ico>
-					<ico color="red">liquid-spot</ico>
-					<ico color="#FFD700">cheese</ico>
-					<ico>cheese-off</ico>
-					<ico color="rgba(0, 0, 0, 0.12)">trash-can</ico>
+				<div class="flex flex-col gap-y-3" id="icon">
+					<p class="bold">
+						Icon
+					</p>
+	
+					<code class="code docs--code p-3 rounded-2 max-w-md">
+						<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>check<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgb(138, 43, 226)&quot;</span>&gt;</span>github<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;blue&quot;</span>&gt;</span>account<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>pig-variant<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;red&quot;</span>&gt;</span>liquid-spot<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;#FFD700&quot;</span>&gt;</span>cheese<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>cheese-off<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgba(0, 0, 0, 0.12)&quot;</span>&gt;</span>trash-can<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span>
+					</code>
+	
+					<div class="flex">
+						<ico>check</ico>
+						<ico color="rgb(138, 43, 226)">github</ico>
+						<ico color="blue">account</ico>
+						<ico>pig-variant</ico>
+						<ico color="red">liquid-spot</ico>
+						<ico color="#FFD700">cheese</ico>
+						<ico>cheese-off</ico>
+						<ico color="rgba(0, 0, 0, 0.12)">trash-can</ico>
+					</div>
+	
+					<a href="https://pictogrammers.com/library/mdi/">> Icon List <</a>
 				</div>
-
-				<a href="https://pictogrammers.com/library/mdi/">> Icon List <</a>
-			</div>
-
-			<div class="flex flex-col gap-y-3" id="carousel">
-				<p class="bold">
-					Carousel
-				</p>
-
-<pre class="code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">carousel</span> 
-<span class="attribute">duration</span>=<span class="quote">&quot;1s&quot;</span> 
+	
+				<div class="flex flex-col gap-y-3" id="carousel">
+					<p class="bold">
+						Carousel
+					</p>
+	
+<pre class="code docs--code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">carousel</span> 
+<span class="attribute">duration</span>=<span class="quote">&quot;0.3s&quot;</span> 
 <span class="attribute">arrow-on-hover</span> 
 <span class="attribute">class</span>=<span class="quote">&quot;border--secondary rounded-2&quot;</span>
 &gt;</span>
@@ -318,40 +323,40 @@
 	<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Jeremy-Serval.jpeg&quot;</span>&gt;</span>
 	<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Adrien-Morin.jpg&quot;</span>&gt;</span>
 <span class="bracket">&lt;/<span class="tag">carousel</span>&gt;</span></code></pre>
-
-				<carousel duration="1s" arrow-on-hover class="border--secondary rounded-2">
-					<div class="card">
-						<div>
+	
+					<carousel duration="0.3s" arrow-on-hover class="border--secondary rounded-2">
+						<div class="card">
 							<div>
-								<img src="./assets/Kamal-HENNOU.jpg">
+								<div>
+									<img src="./assets/Kamal-HENNOU.jpg">
+								</div>
+	
+								<div>
+									<h1>Kamal HENNOU</h1>
+	
+									<h2>School Director</h2>
+								</div>
 							</div>
-
-							<div>
-								<h1>Kamal HENNOU</h1>
-
-								<h2>School Director</h2>
-							</div>
+	
+							<p>
+								If I had to recommend a way of getting into programming today, it would be HTML + CSS with wingJS.
+							</p>
 						</div>
-
-						<p>
-							If I had to recommend a way of getting into programming today, it would be HTML + CSS with wingJS.
-						</p>
-					</div>
-
-					<img src="./assets/Kamal-HENNOU.jpg">
-
-					<img src="./assets/Jeremy-Serval.jpeg">
-
-					<img src="./assets/Adrien-Morin.jpg">
-				</carousel>
-			</div>
-
-			<div class="flex flex-col gap-y-3" id="tab">
-				<p class="bold">
-					Tab
-				</p>
-
-<pre class="code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">tab</span> 
+	
+						<img src="./assets/Kamal-HENNOU.jpg">
+	
+						<img src="./assets/Jeremy-Serval.jpeg">
+	
+						<img src="./assets/Adrien-Morin.jpg">
+					</carousel>
+				</div>
+	
+				<div class="flex flex-col gap-y-3" id="tab">
+					<p class="bold">
+						Tab
+					</p>
+	
+<pre class="code docs--code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">tab</span> 
 <span class="attribute">class</span>=<span class="quote">&quot;border--secondary rounded-2 overflow-hidden&quot;</span>
 &gt;</span>
 	<span class="bracket">&lt;<span class="tag">div</span> 
@@ -375,23 +380,24 @@
 		<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">class</span>=<span class="quote">&quot;h-full&quot;</span> <span class="attribute">src</span>=<span class="quote">&quot;&quot;</span>/&gt;</span>
 	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
 <span class="bracket">&lt;/<span class="tag">tab</span>&gt;</span></code></pre>
-
-				<tab class="docs--tab border--secondary rounded-2 overflow-hidden">
-					<div name="Tab 1" class="flex justify-center items-center h-full w-full">
-						<iframe class="h-full w-full" src="/index.html"></iframe>
-					</div>
-
-					<div name="Tab 2" class="flex justify-center items-center h-full w-full">
-						<iframe class="h-full w-full" src="/design_guide.html"></iframe>
-					</div>
-
-					<div name="Tab 3" class="flex justify-center items-center h-full w-full">
-						<img class="h-full" src="/assets/nyan.gif">
-					</div>
-				</tab>
+	
+					<tab class="docs--tab border--secondary rounded-2 overflow-hidden">
+						<div name="Tab 1" class="flex justify-center items-center h-full w-full">
+							<iframe class="h-full w-full" src="/index.html"></iframe>
+						</div>
+	
+						<div name="Tab 2" class="flex justify-center items-center h-full w-full">
+							<iframe class="h-full w-full" src="/design_guide.html"></iframe>
+						</div>
+	
+						<div name="Tab 3" class="flex justify-center items-center h-full w-full">
+							<img class="h-full" src="/assets/nyan.gif">
+						</div>
+					</tab>
+				</div>
 			</div>
 
-			<div class="flex justify-between mr-6">
+			<div class="flex justify-between mr-6 docs--footer">
 				<p>Copyright © 2023 WingJS.</p>
 				<a href="https://github.com/mathcovax/Challenge-Stack" target="_blank">
 					<div class="flex gap-x-3 items-center">
