@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/main.js" register="/components/navbar.html" use-tag></script>
+	<script src="./js/scroll.js" defer></script>
 	<title>Docs</title>
 </head>
 <body>
@@ -14,24 +15,22 @@
 	<main class="container flex gap-x-6">
 		<section class="docs--sidebar">
 			<div class="flex flex-col gap-y-3">
-				<label class="text-lg bold">Get Started</label>
+				<a href="#getstarted"><label class="text-lg bold" id="getstarted">Get Started</label></a>
 				<ul class="list">
 					<li><a href="#presentation">Presentation</a></li>
 					<li><a href="#installation">Installation</a></li>
-					<li><a href="#startusing">Start using</a></li>
+					<li><a href="#installation">Start using</a></li>
 				</ul>
 			</div>
 			<div class="flex flex-col gap-y-3">
-				<label class="text-lg bold mt-3">Components</label>
+				<a href="#components"><label class="text-lg bold mt-3">Components</label></a>
 				<ul class="list">
-					<li><a href="#Input">Input</a></li>
-					<li><a href="#Buttons">Buttons</a></li>
-					<li><a href="#Menus">Menus</a></li>
-					<li><a href="#Lists">Lists</a></li>
-					<li><a href="#Typography">Typography</a></li>		
-					<li><a href="#Terminals">Terminals</a></li>
-					<li><a href="#Forms">Forms</a></li>
-					<li><a href="#Cards">Cards</a></li>
+					<li><a href="#inputs">Inputs</a></li>
+					<li><a href="#buttons">Buttons</a></li>
+					<li><a href="#lists">Lists</a></li>
+					<li><a href="#typography">Typography</a></li>
+					<li><a href="#form">Form</a></li>
+					<li><a href="#card">Card</a></li>
 				</ul>
 			</div>
 		</section>
@@ -40,8 +39,8 @@
 
 		<section class="docs--content flex flex-col gap-y-5">
 			<div class="flex flex-col gap-y-2">
-				<p class="text-xs color-primary black">Tutorial</p>
-				<h2>Get started with WingJS</h2>
+				<p class="text-xxs color-primary black">Tutorial</p>
+				<h3 id="getstartedwith">Get started with WingJS</h3>
 				<p class="max-w-md leading-normal">
 					WingJS is a CSS framework based on a simple and easy-to-use system
 					based on components. We provide you a large pane of mordern and
@@ -51,7 +50,7 @@
 
 			<div class="flex flex-col gap-y-3">
 				<!-- Installation -->
-				<div class="flex flex-col gap-y-2">
+				<div class="flex flex-col gap-y-2" id="installation">
 					<p class="bold">
 						Installation
 					</p>
@@ -62,7 +61,7 @@
 				</div>
 
 				<!-- Docker -->
-				<div class="flex flex-col gap-y-2">
+				<div class="flex flex-col gap-y-2" id="docker">
 					<p class="bold">
 						Docker
 					</p>
@@ -73,7 +72,7 @@
 				</div>
 
 				<!-- Run the framework -->
-				<div class="flex flex-col gap-y-2">
+				<div class="flex flex-col gap-y-2" id="framework">
 					<p class="bold">
 						Run the framework
 					</p>
@@ -85,8 +84,8 @@
 			</div>
 
 			<div class="flex flex-col gap-y-2">
-				<p class="text-xs color-primary black">Documentation</p>
-				<h2>Components</h2>
+				<p class="text-xxs color-primary black" id="documentation">Documentation</p>
+				<h3 id="components">Components</h3>
 				<p class="max-w-md leading-normal">
 					WingJS is a CSS framework based on a simple and easy-to-use system
 					based on components. We provide you a large pane of mordern and
@@ -96,7 +95,7 @@
 
 			<div class="flex flex-col gap-y-5">
 				<!-- Inputs -->
-				<div class="flex flex-col gap-y-3">
+				<div class="flex flex-col gap-y-3" id="inputs">
 					<p class="bold">
 						Inputs
 					</p>
@@ -107,7 +106,7 @@
 				</div>
 
 				<!-- Buttons -->
-				<div class="flex flex-col gap-y-3">
+				<div class="flex flex-col gap-y-3" id="buttons">
 					<p class="bold">
 						Buttons
 					</p>
@@ -124,7 +123,7 @@
 				</div>
 
 				<!-- Lists -->
-				<div class="flex flex-col gap-y-1">
+				<div class="flex flex-col gap-y-1" id="lists">
 					<p class="bold">
 						Lists
 					</p>
@@ -141,7 +140,7 @@
 				</div>
 
 				<!-- Typography -->
-				<div class="flex flex-col gap-y-3">
+				<div class="flex flex-col gap-y-3" id="typography">
 					<p class="bold">
 						Typography
 					</p>
@@ -159,10 +158,10 @@
 					</div>
 				</div>
 				
-				<!--Forms-->
-				<div class="flex flex-col gap-y-3">
+				<!--Form-->
+				<div class="flex flex-col gap-y-3" id="form">
 					<p class="bold">
-						Forms
+						Form
 					</p>
 					<h2 class="items-center">Contactez-nous</h2>
 					<p class="items-center">Si vous souhaitez obtenir des informations complémentaires, envoyez-nous un message.</p>
@@ -184,9 +183,10 @@
 
 						<button type="submit">Submit</button>
 					</form>
+				</div>
 
 				<!-- Card -->
-				<div class="flex flex-col gap-y-3">
+				<div class="flex flex-col gap-y-3" id="card">
 					<p class="bold">
 						Card
 					</p>
