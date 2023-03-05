@@ -8,8 +8,8 @@ btn.data("circleLeft", "0px");
 btn.data("active", false);
 
 btn.method("clicked", function(e){
-	this.circleLeft = (e.pageX - this.el.offsetLeft) + "px";
-	this.circleTop = (e.pageY - this.el.offsetTop) + "px";
+	this.circleLeft = e.offsetX + "px";
+	this.circleTop = e.offsetY + "px";
 	this.active = true;
 	if(this.onclick)this.onclick(e);
 	else if(this.tag.onclick)this.tag.onclick(e);

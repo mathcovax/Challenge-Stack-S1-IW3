@@ -1,5 +1,6 @@
 [comp="tab"]{
 	max-width: 100%;
+	position: relative;
 
 	.tabs{
 		width: 100%;
@@ -38,11 +39,11 @@
 	}
 
 	.window{
+		position: absolute;
 		width: 100%;
-
-		> * {
-			width: 100%;
-		}
+		height: calc(100% - 25px);
+		margin-top: 25px;
+		top: 0;
 	}
 
 	.hide{

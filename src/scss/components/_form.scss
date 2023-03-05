@@ -40,12 +40,6 @@
 		}
 	}
 
-	>.message-label {
-		grid-column: span 1 / span 1;
-		align-self: start;
-		display: contents;
-	}
-
 	>button[type="submit"] {
 		grid-column-start: 3;
 		background-color: var(--c-d);

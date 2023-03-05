@@ -5,6 +5,7 @@ const listIco = {};
 const ico = new Component("ico");
 ico.inner(html);
 ico.props("size", "24px");
+ico.props("color", "#000");
 
 ico.method("clicked", function(e){
 	this.emit("click", e);

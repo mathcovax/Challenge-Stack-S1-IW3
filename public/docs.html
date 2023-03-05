@@ -6,20 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="/main.js" register="/components/navbar.html" use-tag></script>
-	<script src="./js/scroll.js" defer></script>
 	<title>Docs</title>
 </head>
-<body>
+<body class="flex flex-col justify-content items-center select-none">
 	<navbar></navbar>
 
-	<main class="container flex gap-x-6">
+	<main class="docs--main">
 		<section class="docs--sidebar">
 			<div class="flex flex-col gap-y-3">
-				<a href="#getstarted"><label class="text-lg bold" id="getstarted">Get Started</label></a>
+				<a href="#getstarted"><label class="text-lg bold">Get Started</label></a>
 				<ul class="list">
 					<li><a href="#presentation">Presentation</a></li>
 					<li><a href="#installation">Installation</a></li>
-					<li><a href="#installation">Start using</a></li>
+					<li><a href="#docker">Start using</a></li>
 				</ul>
 			</div>
 			<div class="flex flex-col gap-y-3">
@@ -31,17 +30,20 @@
 					<li><a href="#typography">Typography</a></li>
 					<li><a href="#form">Form</a></li>
 					<li><a href="#card">Card</a></li>
+					<li><a href="#icon">Icon</a></li>
+					<li><a href="#carousel">Carousel</a></li>
+					<li><a href="#tab">Tab</a></li>
 				</ul>
 			</div>
 		</section>
 
-		<div class="vertical-line"></div>
+		<div class="docs--splitbar"></div>
 
-		<section class="docs--content flex flex-col gap-y-5">
-			<div class="flex flex-col gap-y-2">
+		<section scrollable class="docs--content flex flex-col gap-y-5">
+			<div id="getstarted" class="flex flex-col gap-y-2">
 				<p class="text-xxs color-primary black">Tutorial</p>
 				<h3 id="getstartedwith">Get started with WingJS</h3>
-				<p class="max-w-md leading-normal">
+				<p id="presentation" class="max-w-md leading-normal">
 					WingJS is a CSS framework based on a simple and easy-to-use system
 					based on components. We provide you a large pane of mordern and
 					fully-responsive components sets, including the most used basic atoms.
@@ -100,9 +102,12 @@
 						Inputs
 					</p>
 					<code class="max-w-md code rounded-2 p-3">
-						<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span>
+						<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span><br>
+						<br>
+						<span class="bracket">&lt;<span class="tag">text-input</span> <span class="attribute">label</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span><span class="bracket">&lt;/<span class="tag">text-input</span>&gt;</span>
 					</code>
 					<input type="text" placeholder="Go focus">
+					<text-input label="Go focus"></text-input>
 				</div>
 
 				<!-- Buttons -->
@@ -113,12 +118,21 @@
 					<code class="max-w-md code rounded-2 p-3">
 						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--primary&quot;</span>&gt;</span>Primary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
 						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--secondary&quot;</span>&gt;</span>Secondary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
-						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--outline&quot;</span>&gt;</span>Outline<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span>
+						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--outline&quot;</span>&gt;</span>Outline<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
+						<br>
+						<span class="bracket">&lt;<span class="tag">btn</span> <span class="attribute">class</span>=<span class="quote">&quot;button--primary&quot;</span>&gt;</span>Primary<span class="bracket">&lt;/<span class="tag">btn</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">btn</span> <span class="attribute">class</span>=<span class="quote">&quot;button--secondary&quot;</span>&gt;</span>Secondary<span class="bracket">&lt;/<span class="tag">btn</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">btn</span> <span class="attribute">class</span>=<span class="quote">&quot;button--outline&quot;</span>&gt;</span>Outline<span class="bracket">&lt;/<span class="tag">btn</span>&gt;</span><br>
 					</code>
 					<div class="flex gap-x-3">
 						<button class="button button--primary">Primary</button>
 						<button class="button button--secondary">Secondary</button>
 						<button class="button button--outline">Outline</button>
+					</div>
+					<div class="flex gap-x-3">
+						<btn class="button--primary">Primary</btn>
+						<btn class="button--secondary">Secondary</btn>
+						<btn class="button--outline">Outline</btn>
 					</div>
 				</div>
 
@@ -163,8 +177,26 @@
 					<p class="bold">
 						Form
 					</p>
-					<h2 class="items-center">Contactez-nous</h2>
-					<p class="items-center">Si vous souhaitez obtenir des informations complémentaires, envoyez-nous un message.</p>
+		
+<pre class="code rounded-2 p-3 max-w-md"><code><span class="bracket">&lt;<span class="tag">form</span> <span class="attribute">class</span>=<span class="quote">&quot;form&quot;</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;fast-name&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>Last Name<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Last Name&quot;</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;first-name&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>First Name<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;First Name&quot;</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;email&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>Email<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;example@email.com&quot;</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;phone-number&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>Phone Number<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;number&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot; XX XX XX XX XX&quot;</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">label</span> <span class="attribute">for</span>=<span class="quote">&quot;message&quot;</span> <span class="attribute">class</span>=<span class="quote">&quot;bold&quot;</span>&gt;</span>Message<span class="bracket">&lt;/<span class="tag">label</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">textarea</span> <span class="attribute">id</span>=<span class="quote">&quot;message&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Message&quot;</span>&gt;</span><span class="bracket">&lt;/<span class="tag">textarea</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">type</span>=<span class="quote">&quot;submit&quot;</span>&gt;</span>Submit<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span>
+<span class="bracket">&lt;/<span class="tag">form</span>&gt;</span></code></pre>
+
 					<form class="form">
 						<label for="fast-name" class="bold">Last Name</label>
 						<input type="text" placeholder="Last Name">
@@ -178,7 +210,7 @@
 						<label for="phone-number" class="bold">Phone Number</label>
 						<input type="number" placeholder=" XX XX XX XX XX">
 
-						<label for="message" class="bold message-label">Message</label>
+						<label for="message" class="bold">Message</label>
 						<textarea id="message" placeholder="Message"></textarea>
 
 						<button type="submit">Submit</button>
@@ -206,7 +238,7 @@
 		dui sapien at elit. Pellentesque venenatis pharetra nibh.
 	<span class="bracket">&lt;/<span class="tag">p</span>&gt;</span></span>
 <span class="bracket">&lt;/<span class="tag">div</span>&gt;</span></span></code></pre>
-					<div class="card border--secondary rounded-1">
+					<div class="card border--secondary rounded-2">
 						<div>
 							<div>
 								<img src="/images/2.png" alt="Sample image">
@@ -225,7 +257,141 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="icon" class="flex flex-col gap-y-3">
+				<p class="bold">
+					Icon
+				</p>
+
+				<code class="code p-3 rounded-2 max-w-md">
+					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>check<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgb(138, 43, 226)&quot;</span>&gt;</span>github<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;blue&quot;</span>&gt;</span>account<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>pig-variant<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;red&quot;</span>&gt;</span>liquid-spot<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;#FFD700&quot;</span>&gt;</span>cheese<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span>&gt;</span>cheese-off<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span><br>
+					<span class="bracket">&lt;<span class="tag">ico</span> <span class="attribute">color</span>=<span class="quote">&quot;rgba(0, 0, 0, 0.12)&quot;</span>&gt;</span>trash-can<span class="bracket">&lt;/<span class="tag">ico</span>&gt;</span>
+				</code>
+
+				<div class="flex">
+					<ico>check</ico>
+					<ico color="rgb(138, 43, 226)">github</ico>
+					<ico color="blue">account</ico>
+					<ico>pig-variant</ico>
+					<ico color="red">liquid-spot</ico>
+					<ico color="#FFD700">cheese</ico>
+					<ico>cheese-off</ico>
+					<ico color="rgba(0, 0, 0, 0.12)">trash-can</ico>
+				</div>
+
+				<a href="https://pictogrammers.com/library/mdi/">> Icon List <</a>
+			</div>
+
+			<div id="carousel" class="flex flex-col gap-y-3">
+				<p class="bold">
+					Carousel
+				</p>
+
+<pre class="code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">carousel</span> 
+<span class="attribute">duration</span>=<span class="quote">&quot;1s&quot;</span> 
+<span class="attribute">arrow-on-hover</span> 
+<span class="attribute">class</span>=<span class="quote">&quot;border--secondary rounded-2&quot;</span>
+&gt;</span>
+	<span class="bracket">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="quote">&quot;card&quot;</span>&gt;</span>
+		<span class="bracket">&lt;<span class="tag">div</span>&gt;</span>
+			<span class="bracket">&lt;<span class="tag">div</span>&gt;</span>
+				<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Kamal-HENNOU.jpg&quot;</span>&gt;</span>
+			<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+			<span class="bracket">&lt;<span class="tag">div</span>&gt;</span>
+				<span class="bracket">&lt;<span class="tag">h1</span>&gt;</span>Kamal HENNOU<span class="bracket">&lt;/<span class="tag">h1</span>&gt;</span>
+
+				<span class="bracket">&lt;<span class="tag">h2</span>&gt;</span>School Director<span class="bracket">&lt;/<span class="tag">h2</span>&gt;</span>
+			<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+		<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+		<span class="bracket">&lt;<span class="tag">p</span>&gt;</span>
+			If I had to recommend a way of getting into 
+			programming today, it would be HTML + CSS with wingJS.
+		<span class="bracket">&lt;/<span class="tag">p</span>&gt;</span>
+	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Kamal-HENNOU.jpg&quot;</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Jeremy-Serval.jpeg&quot;</span>&gt;</span>
+	<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">src</span>=<span class="quote">&quot;./assets/Adrien-Morin.jpg&quot;</span>&gt;</span>
+<span class="bracket">&lt;/<span class="tag">carousel</span>&gt;</span></code></pre>
+
+				<carousel duration="1s" arrow-on-hover class="border--secondary rounded-2">
+					<div class="card">
+						<div>
+							<div>
+								<img src="./assets/Kamal-HENNOU.jpg">
+							</div>
+
+							<div>
+								<h1>Kamal HENNOU</h1>
+
+								<h2>School Director</h2>
+							</div>
+						</div>
+
+						<p>
+							If I had to recommend a way of getting into programming today, it would be HTML + CSS with wingJS.
+						</p>
+					</div>
+
+					<img src="./assets/Kamal-HENNOU.jpg">
+
+					<img src="./assets/Jeremy-Serval.jpeg">
+
+					<img src="./assets/Adrien-Morin.jpg">
+				</carousel>
+			</div>
+
+			<div id="tab" class="flex flex-col gap-y-3">
+				<p class="bold">
+					Tab
+				</p>
+
+<pre class="code p-3 rounded-2 select-text m-0 max-w-md"><code><span class="bracket">&lt;<span class="tag">tab</span> 
+<span class="attribute">class</span>=<span class="quote">&quot;border--secondary rounded-2 overflow-hidden&quot;</span>
+&gt;</span>
+	<span class="bracket">&lt;<span class="tag">div</span> 
+	<span class="attribute">name</span>=<span class="quote">&quot;Tab 1&quot;</span> 
+	<span class="attribute">class</span>=<span class="quote">&quot;flex justify-center items-center h-full w-full&quot;</span>
+	&gt;</span>
+		<span class="bracket">&lt;<span class="tag">iframe</span> <span class="attribute">class</span>=<span class="quote">&quot;h-full w-full&quot;</span> <span class="attribute">src</span>=<span class="quote">&quot;&quot;</span>&gt;</span><span class="bracket">&lt;/<span class="tag">iframe</span>&gt;</span>
+	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">div</span> 
+	<span class="attribute">name</span>=<span class="quote">&quot;Tab 2&quot;</span> 
+	<span class="attribute">class</span>=<span class="quote">&quot;flex justify-center items-center h-full w-full&quot;</span>
+	&gt;</span>
+		<span class="bracket">&lt;<span class="tag">iframe</span> <span class="attribute">class</span>=<span class="quote">&quot;h-full w-full&quot;</span> <span class="attribute">src</span>=<span class="quote">&quot;&quot;</span>&gt;</span><span class="bracket">&lt;/<span class="tag">iframe</span>&gt;</span>
+	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+
+	<span class="bracket">&lt;<span class="tag">div</span> 
+	<span class="attribute">name</span>=<span class="quote">&quot;Tab 3&quot;</span> 
+	<span class="attribute">class</span>=<span class="quote">&quot;flex justify-center items-center h-full w-full&quot;</span>
+	&gt;</span>
+		<span class="bracket">&lt;<span class="tag">img</span> <span class="attribute">class</span>=<span class="quote">&quot;h-full&quot;</span> <span class="attribute">src</span>=<span class="quote">&quot;&quot;</span>/&gt;</span>
+	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span>
+<span class="bracket">&lt;/<span class="tag">tab</span>&gt;</span></code></pre>
+
+				<tab class="max-w-md docs--tab border--secondary rounded-2 overflow-hidden">
+					<div name="Tab 1" class="flex justify-center items-center h-full w-full">
+						<iframe class="h-full w-full" src="/index.html"></iframe>
+					</div>
+
+					<div name="Tab 2" class="flex justify-center items-center h-full w-full">
+						<iframe class="h-full w-full" src="/design_guide.html"></iframe>
+					</div>
+
+					<div name="Tab 3" class="flex justify-center items-center h-full w-full">
+						<img class="h-full" src="/assets/nyan.gif">
+					</div>
+				</tab>
+			</div>
 		</section>
+
 	</main>
 </body>
 </html>

@@ -84,9 +84,8 @@ button {
 
 .container {
 	max-width: $container-width;
-	margin: auto;
-	margin-top: 96px;
-	margin-bottom: 48px;
+	margin-left: 16px;
+	margin-right: 16px;
 }
 
 /* Decoration */
@@ -398,4 +397,20 @@ button {
 
 .select-all{
 	user-select: all;
+}
+
+.h-full{
+	height: 100%;
+}
+
+.w-full{
+	width: 100%;
+}
+
+.h-1\/2{
+	height: 50%;
+}
+
+.w-1\/2{
+	width: 50%;
 }

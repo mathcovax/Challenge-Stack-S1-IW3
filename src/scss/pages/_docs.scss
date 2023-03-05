@@ -1,12 +1,43 @@
-.docs-- {
+.docs--{
+	&main{
+		padding-top: 72px;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		display: flex;
+		padding-left: 10px;
+		width: 100%;
+		justify-content: center;
+		gap: 120px;
+		max-width: 1510px;
+	}
+
 	&sidebar {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
 	}
 
 	&content {
-		flex: 8;
+		overflow-y: auto;
+		flex-grow: 1;
+	}
+
+	&splitbar{
+		height: 100%;
+		background: var(--c-s);
+		width: 1px;
+	}
+
+	&tab{
+		height: 500px;
+		width: 400px;
+		overflow: hidden;
+		
+		iframe{
+			border: 0;
+			width: 400px;
+		}
 	}
 }
