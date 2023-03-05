@@ -1,22 +1,24 @@
-.code{
+.code {
 	tab-size: 30px;
 	background-color: #000;
 	font-weight: 400;
 	color: #fff;
+	overflow: hidden;
 
-	.tag{
+	.tag {
 		color: #e712eb;
+		font-weight: bold;
 	}
 
-	.quot{
+	.quote {
 		color: #0ea5e9;
 	}
 
-	.chevron{
+	.bracket {
 		color: #fff;
 	}
 
-	.attribut{
+	.attribute {
 		color: #999999;
 	}
 }
