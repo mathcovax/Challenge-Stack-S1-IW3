@@ -1,39 +1,56 @@
-form{
+form {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: rem(24);
-	align-items: center;
 	width: 60%;
-	>input{
-		grid-column: span 2 / span 2;
+	
+	> input {
+	  grid-column: span 2 / span 2;
 	}
-	>label{
-		grid-column: span 1 / span 1;
+	
+	> label {
+	  grid-column: span 1 / span 1;
+	  align-self: center;
 	}
+	
 	> textarea {
-		grid-column: span 2 / span 3;
-		height: 40px;
-		padding: rem(8);
-		font-size: rem(16);
-		border-radius: rem(4);
-		border: 1px solid var(--c-d);
-		min-height: 200px;
-		min-width: 320px;
-		max-width: 320px;
-		resize: vertical;
-	  }
-	  
-	  #message-label {
-		grid-column: span 1 / span 1;
-		align-self: start; /* aligner le label en haut */
-	  }
+	  grid-column: span 2 / span 3;
+	  height: 40px;
+	  padding: rem(8);
+	  font-size: rem(16);
+	  border-radius: rem(4);
+	  min-height: 200px;
+	  border: 1px solid var(--c-s);
+	  min-width: 320px;
+	  max-width: 320px;
+	  resize: vertical;
 
-	> button[type="submit"] {
-		grid-column-start: 3;
-		background-color: var(--c-d);
-		color: var(--c-l);
-		align-self: self-end;
+	  &:focus {
+		border: 1px solid var(--c-p);
+		color: (var(--c-p));
+
+		&::placeholder {
+			color: var(--c-p)
+		}
 	}
 
-}
-
+	&:not(:placeholder-shown):not(:focus) {
+		border: 1px solid black;
+		color: black;
+	}
+	}
+	
+	> .message-label {
+	  grid-column: span 1 / span 1;
+	  align-self: start; /* aligner le label en haut */
+	  display: contents;
+	}
+	
+	> button[type="submit"] {
+	  grid-column-start: 3;
+	  background-color: var(--c-d);
+	  color: var(--c-l);
+	  align-self: self-end;
+	}
+  }
+  
