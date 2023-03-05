@@ -1,16 +1,17 @@
 .docs--{
 	&main{
-		padding-top: 72px;
+		width: 100%;
 		height: 100%;
-		overflow: hidden;
-		position: absolute;
-		width: 100%;
-		display: flex;
-		padding-left: 10px;
-		width: 100%;
-		justify-content: center;
-		gap: 120px;
 		max-width: 1510px;
+
+		padding-top: 72px;
+		padding-left: 10px;
+
+		gap: 120px;
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		overflow: hidden;
 	}
 
 	&sidebar {
@@ -20,6 +21,7 @@
 	}
 
 	&content {
+		padding-bottom: 72px;
 		overflow-y: auto;
 		flex-grow: 1;
 	}
@@ -31,13 +33,13 @@
 	}
 
 	&tab{
-		height: 500px;
-		width: 400px;
+		height: 400px;
+		width: 800px;
 		overflow: hidden;
 		
 		iframe{
 			border: 0;
-			width: 400px;
+			width: 800px;
 		}
 	}
 }
