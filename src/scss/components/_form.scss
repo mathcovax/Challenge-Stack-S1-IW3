@@ -14,13 +14,14 @@
 	}
 
 	>textarea {
-		grid-column: span 2 / span 3;
-		height: 40px;
-		padding: rem(8);
 		font-size: rem(16);
-		border-radius: rem(4);
-		min-height: 200px;
+		font-family: $font_inter;
+		border-radius: 8px;
 		border: 1px solid var(--c-s);
+		grid-column: span 2 / span 3;
+		padding: map-get($spacings, 3);
+
+		min-height: 200px;
 		min-width: 320px;
 		max-width: 320px;
 		resize: vertical;
