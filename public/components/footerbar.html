@@ -37,21 +37,45 @@ footerbar.inner(inner);
 </script>
 
 <style>
-.footerbar{
-	width: 100%;
-	user-select: none;
+.footerbar {
+  width: 100%;
+  user-select: none;
 }
 
-.footerbar  a{
-	color: var(--c-d);
+.footerbar a {
+  color: var(--c-d);
 }
 
-.footerbar .content{
-	max-width: 1500px;
-	width: 1500px;
+.footerbar .content {
+  max-width: 1500px;
+  width: 100%;
+  padding: 0 1rem;
 }
 
-.footerbar .linkbloc{
-	gap: 15%;
+.footerbar .linkbloc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+.footerbar .flex-col {
+  flex-basis: calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 640px) {
+  .footerbar .flex-col {
+    flex-basis: calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footerbar .flex-col {
+    flex-basis: calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
+  }
+}
+
 </style>
