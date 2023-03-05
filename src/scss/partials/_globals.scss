@@ -31,6 +31,11 @@ h4 {
 	margin: 0;
 }
 
+a {
+	color: var(--c-s);
+	text-decoration: none;
+}
+
 p {
 	margin: 0;
 }
@@ -80,6 +85,16 @@ button {
 .container {
 	max-width: $container-width;
 	margin: auto;
+	margin-top: 96px;
+	margin-bottom: 48px;
+}
+
+/* Decoration */
+
+.vertical-line {
+	width: 1px;
+	height: 100px;
+	background-color: var(--c-s);
 }
 
 /* Display */
@@ -156,6 +171,24 @@ button {
 
 .color-dark {
 	color: var(--c-d);
+}
+
+/* Line height */
+
+.leading-none {
+	line-height: 1;
+}
+
+.leading-tight {
+	line-height: 1.25;
+}
+
+.leading-normal {
+	line-height: 1.5;
+}
+
+.leading-loose {
+	line-height: 2;
 }
 
 /* Text tracking */
@@ -309,6 +342,8 @@ button {
 		border-radius: map-get($spacings, $i);
 	}
 }
+
+/* Grid */
 
 @for $i from 1 through 12 {
 	.grid-cols-#{$i} {
