@@ -10,5 +10,183 @@
 </head>
 <body>
 	<navbar></navbar>
+
+	<main class="container flex gap-x-6">
+		<section class="docs--sidebar">
+			<div class="flex flex-col gap-y-3">
+				<label class="text-lg bold">Get Started</label>
+				<ul class="list">
+					<li><a href="#presentation">Presentation</a></li>
+					<li><a href="#installation">Installation</a></li>
+					<li><a href="#startusing">Start using</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<div class="vertical-line"></div>
+
+		<section class="docs--content flex flex-col gap-y-5">
+			<div class="flex flex-col gap-y-2">
+				<p class="text-xs color-primary black">Tutorial</p>
+				<h2>Get started with WingJS</h2>
+				<p class="max-w-md leading-normal">
+					WingJS is a CSS framework based on a simple and easy-to-use system
+					based on components. We provide you a large pane of mordern and
+					fully-responsive components sets, including the most used basic atoms.
+				</p>
+			</div>
+
+			<div class="flex flex-col gap-y-3">
+				<!-- Installation -->
+				<div class="flex flex-col gap-y-2">
+					<p class="bold">
+						Installation
+					</p>
+					<p class="color-secondary">
+						Start the installation by cloning the repository from GitHub.
+					</p>
+					<pre class="max-w-md code rounded-2 p-3"><code>git clone <span class="quote">https://github.com/mathcovax/Challenge-Stack.git</span></code></pre>
+				</div>
+
+				<!-- Docker -->
+				<div class="flex flex-col gap-y-2">
+					<p class="bold">
+						Docker
+					</p>
+					<p class="color-secondary">
+						Build the project environment with Docker.
+					</p>
+					<pre class="max-w-md code rounded-2 p-3"><code>docker-compose up <span class="quote">--d</span></code></pre>
+				</div>
+
+				<!-- Run the framework -->
+				<div class="flex flex-col gap-y-2">
+					<p class="bold">
+						Run the framework
+					</p>
+					<p class="color-secondary">
+						Start a development webpack server to run the project on a localhost.
+					</p>
+					<pre class="max-w-md code rounded-2 p-3"><code>npm run <span class="quote">dev</span></code></pre>
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-y-2">
+				<p class="text-xs color-primary black">Documentation</p>
+				<h2>Components</h2>
+				<p class="max-w-md leading-normal">
+					WingJS is a CSS framework based on a simple and easy-to-use system
+					based on components. We provide you a large pane of mordern and
+					fully-responsive components sets, including the most used basic atoms.
+				</p>
+			</div>
+
+			<div class="flex flex-col gap-y-5">
+				<!-- Inputs -->
+				<div class="flex flex-col gap-y-3">
+					<p class="bold">
+						Inputs
+					</p>
+					<code class="max-w-md code rounded-2 p-3">
+						<span class="bracket">&lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="quote">&quot;text&quot;</span> <span class="attribute">placeholder</span>=<span class="quote">&quot;Go focus&quot;</span>&gt;</span></span>
+					</code>
+					<input type="text" placeholder="Go focus">
+				</div>
+
+				<!-- Buttons -->
+				<div class="flex flex-col gap-y-3">
+					<p class="bold">
+						Buttons
+					</p>
+					<code class="max-w-md code rounded-2 p-3">
+						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--primary&quot;</span>&gt;</span>Primary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--secondary&quot;</span>&gt;</span>Secondary<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">button</span> <span class="attribute">class</span>=<span class="quote">&quot;button button--outline&quot;</span>&gt;</span>Outline<span class="bracket">&lt;/<span class="tag">button</span>&gt;</span>
+					</code>
+					<div class="flex gap-x-3">
+						<button class="button button--primary">Primary</button>
+						<button class="button button--secondary">Secondary</button>
+						<button class="button button--outline">Outline</button>
+					</div>
+				</div>
+
+				<!-- Lists -->
+				<div class="flex flex-col gap-y-1">
+					<p class="bold">
+						Lists
+					</p>
+					<pre class="max-w-md code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">ul</span>&gt;</span></span>
+	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 1<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
+	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 2<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
+	<span class="bracket">&lt;<span class="tag">li</span>&gt;</span>List Item 3<span class="bracket">&lt;/<span class="tag">li</span>&gt;</span></span>
+<span class="bracket">&lt;/<span class="tag">ul</span>&gt;</span></span></code></pre>
+					<ul class="list">
+						<li>List Item 1</li>
+						<li>List Item 2</li>
+						<li>List Item 3</li>
+					</ul>
+				</div>
+
+				<!-- Typography -->
+				<div class="flex flex-col gap-y-3">
+					<p class="bold">
+						Typography
+					</p>
+					<code class="max-w-md code rounded-2 p-3">
+						<span class="bracket">&lt;<span class="tag">h1</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h1</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">h2</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h2</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">h3</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h3</span>&gt;</span><br>
+						<span class="bracket">&lt;<span class="tag">h4</span>&gt;</span>The quick brown fox jumps over the lazy dog.<span class="bracket">&lt;/<span class="tag">h4</span>&gt;</span><br>
+					</code>
+					<div class="flex flex-col gap-y-2">
+						<h1>The quick brown fox jumps.</h1>
+						<h2>The quick brown fox jumps over the lazy dog.</h2>
+						<h3>The quick brown fox jumps over the lazy dog.</h3>
+						<h4>The quick brown fox jumps over the lazy dog.</h4>
+					</div>
+				</div>
+
+				<!-- Card -->
+				<div class="flex flex-col gap-y-3">
+					<p class="bold">
+						Card
+					</p>
+					<pre class="max-w-md code p-3 rounded-2"><code><span class="bracket">&lt;<span class="tag">div</span> <span class="attribute">class</span>=<span class="quote">&quot;card border--secondary rounded-1&quot;</span>&gt;</span></span>
+	<span class="bracket">&lt;<span class="tag">div</span>&gt;</span></span>
+		<span class="bracket">&lt;<span class="tag">div</span>&gt;</span></span>
+			<span class="bracket">&lt;<span class="tag">h1</span>&gt;</span>Lorem ipsum<span class="bracket">&lt;/<span class="tag">h1</span>&gt;</span>
+			<span class="bracket">&lt;<span class="tag">h2</span>&gt;</span>Lorem ipsum<span class="bracket">&lt;/<span class="tag">h2</span>&gt;</span>
+		<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span></span>
+	<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span></span>
+	<span class="bracket">&lt;<span class="tag">p</span>&gt;</span></span>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Donec augue est, aliquam non pretium sit amet, malesuada
+		ac nulla. Phasellus sodales nisi leo, ut interdum nunc
+		posuere ut. Curabitur vestibulum, sem vel placerat
+		venenatis, urna neque scelerisque eros, eu malesuada
+		dui sapien at elit. Pellentesque venenatis pharetra nibh.
+	<span class="bracket">&lt;/<span class="tag">p</span>&gt;</span></span>
+<span class="bracket">&lt;/<span class="tag">div</span>&gt;</span></span></code></pre>
+					<div class="card border--secondary rounded-1">
+						<div>
+							<div>
+								<img src="/images/2.png" alt="Sample image">
+							</div>
+							<div>
+								<h1>Lorem ipsum</h1>
+								<h2>Lorem ipsum</h2>
+							</div>
+						</div>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue est, aliquam non pretium sit
+							amet, malesuada ac nulla. Phasellus sodales nisi leo, ut interdum nunc posuere ut. Curabitur vestibulum,
+							sem vel placerat venenatis, urna neque scelerisque eros, eu malesuada dui sapien at elit.
+							Pellentesque venenatis pharetra nibh, id varius.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </body>
 </html>
