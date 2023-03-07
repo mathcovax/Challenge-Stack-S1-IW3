@@ -85,19 +85,23 @@
 		}
 
 		&topbarMenu{
-			top: 72px;
 			width: 100%;
-			position: absolute;
+			top: 72px;
 			right: 0px;
-			background: white;
-			display: flex;
-			justify-content: flex-end;
-			padding-right: 10px;
+			position: absolute;
 			z-index: 1;
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 0px 16px;
+
+			padding: 16px;
+			background: white;
 		}
 
 		&content{
-			padding-top: 25px;
+			padding-top: 56px;
 		}
 
 		&splitbar{
